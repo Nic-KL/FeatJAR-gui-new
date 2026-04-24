@@ -1,0 +1,130 @@
+/*
+ * Copyright (C) 2026 FeatJAR-Development-Team
+ *
+ * This file is part of FeatJAR-FeatJAR-gui-new.
+ *
+ * FeatJAR-gui-new is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3.0 of the License,
+ * or (at your option) any later version.
+ *
+ * FeatJAR-gui-new is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with FeatJAR-gui-new. If not, see <https://www.gnu.org/licenses/>.
+ *
+ * See <https://github.com/FeatureIDE> for further information.
+ */
+package de.featjar.gui.policy;
+
+import de.featjar.gui.handler.SelectionActionHandler;
+import de.featjar.gui.handler.create.CreateConstraintOperationHandler;
+import de.featjar.gui.handler.create.PasteOperationHandler;
+import de.featjar.gui.handler.create.feature.CreateMandatoryFeatureNodeHandler;
+import de.featjar.gui.handler.create.feature.CreateMultipleFeatureNodeHandler;
+import de.featjar.gui.handler.create.feature.CreateOptionalFeatureNodeHandler;
+import de.featjar.gui.handler.create.group.CreateAndGroupNodeHandler;
+import de.featjar.gui.handler.create.group.CreateCardinalityGroupNodeHandler;
+import de.featjar.gui.handler.create.group.CreateOrGroupNodeHandler;
+import de.featjar.gui.handler.create.group.CreateXorGroupNodeHandler;
+import de.featjar.gui.handler.modify.DeleteFeatureNodeHandler;
+import de.featjar.gui.handler.modify.FeatureModelLabelEditValidator;
+import de.featjar.gui.handler.modify.FeatureNodeLabelEditHandler;
+import de.featjar.gui.handler.modify.FeatureNodeLabelEditOperationHandler;
+import de.featjar.gui.id.FeatureModelIdGenerator;
+import de.featjar.gui.model.FeatureModelGModelFactory;
+import de.featjar.gui.model.FeatureModelSourceModelStorage;
+import de.featjar.gui.palette.FeatureModelToolPaletteItemProvider;
+import org.eclipse.glsp.server.actions.ActionHandler;
+import org.eclipse.glsp.server.di.MultiBinding;
+import org.eclipse.glsp.server.diagram.DiagramConfiguration;
+import org.eclipse.glsp.server.emf.EMFIdGenerator;
+import org.eclipse.glsp.server.emf.EMFSourceModelStorage;
+import org.eclipse.glsp.server.emf.notation.EMFNotationDiagramModule;
+import org.eclipse.glsp.server.features.core.model.GModelFactory;
+import org.eclipse.glsp.server.features.directediting.LabelEditValidator;
+import org.eclipse.glsp.server.features.toolpalette.ToolPaletteItemProvider;
+import org.eclipse.glsp.server.operations.OperationHandler;
+
+public class FeatureModelDiagramModule extends EMFNotationDiagramModule {
+
+    @Override
+    protected Class<? extends DiagramConfiguration> bindDiagramConfiguration() {
+        // define what operations are allowed with our elements
+        return FeatureModelDiagramConfiguration.class;
+    }
+
+    // Experimentell
+    // @Override
+    // protected Class<? extends PopupModelFactory> bindPopupModelFactory() {
+    // return FeaturesPopupModelFactory.class;
+    // }
+
+    @Override
+    protected Class<? extends EMFSourceModelStorage> bindSourceModelStorage() {
+        // ensure our custom package is registered when loading our models
+        return FeatureModelSourceModelStorage.class;
+    }
+
+    @Override
+    public Class<? extends GModelFactory> bindGModelFactory() {
+        // custom factory to convert tasks into nodes
+        return FeatureModelGModelFactory.class;
+    }
+
+    // WRONG we need a custom generator which sets IDs when there is no ID present !
+    // @Override
+    // protected Class<? extends EMFIdGenerator> bindEMFIdGenerator() {
+    // // all our elements inherit from Identifiable and have an ID attribute set
+    // return AttributeIdGenerator.class;
+    // }
+
+    @Override
+    protected Class<? extends EMFIdGenerator> bindEMFIdGenerator() {
+        // all our elements inherit from Identifiable and have an ID attribute set
+        return FeatureModelIdGenerator.class;
+    }
+
+    @Override
+    protected Class<? extends ToolPaletteItemProvider> bindToolPaletteItemProvider() {
+        return FeatureModelToolPaletteItemProvider.class;
+    }
+
+    @Override
+    protected Class<? extends LabelEditValidator> bindLabelEditValidator() {
+        return FeatureModelLabelEditValidator.class;
+    }
+
+    @Override
+    protected void configureActionHandlers(final MultiBinding<ActionHandler> bindings) {
+        super.configureActionHandlers(bindings);
+        bindings.add(SelectionActionHandler.class);
+        bindings.add(FeatureNodeLabelEditHandler.class);
+    }
+
+    @Override
+    protected void configureOperationHandlers(final MultiBinding<OperationHandler<?>> binding) {
+        super.configureOperationHandlers(binding);
+        binding.add(CreateMandatoryFeatureNodeHandler.class);
+        binding.add(CreateOptionalFeatureNodeHandler.class);
+        binding.add(CreateMultipleFeatureNodeHandler.class);
+
+        binding.add(CreateOrGroupNodeHandler.class);
+        binding.add(CreateXorGroupNodeHandler.class);
+        binding.add(CreateAndGroupNodeHandler.class);
+        binding.add(CreateCardinalityGroupNodeHandler.class);
+
+        binding.add(CreateConstraintOperationHandler.class);
+        binding.add(DeleteFeatureNodeHandler.class);
+        binding.add(PasteOperationHandler.class);
+        binding.add(FeatureNodeLabelEditOperationHandler.class);
+    }
+
+    @Override
+    public String getDiagramType() {
+        return "featuremodel-diagram";
+    }
+}

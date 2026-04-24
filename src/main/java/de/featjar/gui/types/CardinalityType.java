@@ -1,0 +1,52 @@
+/*
+ * Copyright (C) 2026 FeatJAR-Development-Team
+ *
+ * This file is part of FeatJAR-FeatJAR-gui-new.
+ *
+ * FeatJAR-gui-new is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3.0 of the License,
+ * or (at your option) any later version.
+ *
+ * FeatJAR-gui-new is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with FeatJAR-gui-new. If not, see <https://www.gnu.org/licenses/>.
+ *
+ * See <https://github.com/FeatureIDE> for further information.
+ */
+package de.featjar.gui.types;
+
+import featJAR.Cardinality;
+
+public enum CardinalityType {
+    OPTIONAL_FEATURE("feature-optional"),
+    MANDATORY_FEATURE("feature-manatory"),
+    MULTIPLE_FEATURE("feature-multiple");
+
+    private final String value;
+
+    CardinalityType(String value) {
+        this.value = value;
+    }
+
+    public String value() {
+        return value;
+    }
+
+    public static CardinalityType of(Cardinality c) {
+        if (c.getLowerBound() == 0 && c.getUpperBound() == 1) return OPTIONAL_FEATURE;
+        if (c.getLowerBound() == 1 && c.getUpperBound() == 1) return MANDATORY_FEATURE;
+        return MULTIPLE_FEATURE;
+    }
+
+    public static CardinalityType fromGlspId(String glspId) {
+        for (CardinalityType t : values()) {
+            if (t.value().equals(glspId)) return t;
+        }
+        throw new IllegalArgumentException("Unknown FeatureCardinalityType: " + glspId);
+    }
+}
