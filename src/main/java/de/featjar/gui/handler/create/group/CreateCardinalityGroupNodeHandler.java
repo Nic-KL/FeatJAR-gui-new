@@ -20,10 +20,9 @@
  */
 package de.featjar.gui.handler.create.group;
 
-import de.featjar.gui.handler.AGroupNodeHandler;
 import de.featjar.gui.types.NodeType;
 
-public class CreateCardinalityGroupNodeHandler extends AGroupNodeHandler {
+public class CreateCardinalityGroupNodeHandler extends ACreateGroupNodeHandler {
     public CreateCardinalityGroupNodeHandler() {
         super(NodeType.CARDINALITY_NODE.value());
     }

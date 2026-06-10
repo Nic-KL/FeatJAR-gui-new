@@ -18,11 +18,11 @@
  *
  * See <https://github.com/FeatureIDE> for further information.
  */
-package de.featjar.gui.handler;
+package de.featjar.gui.handler.create.group;
 
 import com.google.inject.Inject;
-import de.featjar.gui.handler.utils.HandlerUtils;
 import de.featjar.gui.handler.utils.CardinialityUtils;
+import de.featjar.gui.handler.utils.HandlerUtils;
 import de.featjar.gui.types.NodeType;
 import featJAR.FeatJARFactory;
 import featJAR.FeatJARPackage;
@@ -40,7 +40,7 @@ import org.eclipse.glsp.server.emf.EMFIdGenerator;
 import org.eclipse.glsp.server.emf.notation.EMFNotationModelState;
 import org.eclipse.glsp.server.operations.CreateNodeOperation;
 
-public class AGroupNodeHandler extends EMFCreateOperationHandler<CreateNodeOperation> {
+public class ACreateGroupNodeHandler extends EMFCreateOperationHandler<CreateNodeOperation> {
 
     @Inject
     protected EMFNotationModelState modelState;
@@ -48,13 +48,13 @@ public class AGroupNodeHandler extends EMFCreateOperationHandler<CreateNodeOpera
     @Inject
     protected EMFIdGenerator idGenerator;
 
-    protected AGroupNodeHandler(final String elementTypeId) {
+    protected ACreateGroupNodeHandler(final String elementTypeId) {
         super(elementTypeId);
     }
 
     @Override
     public Optional<Command> createCommand(final CreateNodeOperation operation) {
-        return Optional.of(createOrXorNode());
+        return Optional.of(createGroupNode());
     }
 
     protected Optional<Feature> getRoot() {
@@ -65,13 +65,13 @@ public class AGroupNodeHandler extends EMFCreateOperationHandler<CreateNodeOpera
     @Override
     public String getLabel() {
         return "";
-    } // not needed for helper OR/XOR node
+    }
 
     protected FeatureModel getFeatureModel() {
         return modelState.getSemanticModel(FeatureModel.class).get();
     }
 
-    protected Command createOrXorNode() {
+    protected Command createGroupNode() {
         // If no element selected, default to root model
 
         Optional<Identifiable> selection = modelState.getProperty("currentSelection", Identifiable.class);
@@ -113,7 +113,7 @@ public class AGroupNodeHandler extends EMFCreateOperationHandler<CreateNodeOpera
         gn.setName(getLabel());
 
         //      NodeType type = NodeType.valueOf(getHandledElementTypeIds().get(0));
-        NodeType type = NodeType.fromGlspId(getHandledElementTypeIds().get(0));
+        NodeType type = NodeType.fromvalue(getHandledElementTypeIds().get(0));
 
         switch (type) {
             case OR_NODE:

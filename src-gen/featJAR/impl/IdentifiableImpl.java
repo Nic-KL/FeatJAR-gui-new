@@ -37,25 +37,25 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object
- * '<em><b>Identifiable</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Identifiable</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link featJAR.impl.IdentifiableImpl#getId <em>Id</em>}</li>
- * <li>{@link featJAR.impl.IdentifiableImpl#getName <em>Name</em>}</li>
- * <li>{@link featJAR.impl.IdentifiableImpl#getAttributes
- * <em>Attributes</em>}</li>
+ *   <li>{@link featJAR.impl.IdentifiableImpl#getId <em>Id</em>}</li>
+ *   <li>{@link featJAR.impl.IdentifiableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link featJAR.impl.IdentifiableImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container implements Identifiable {
     /**
-     * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getId()
      * @generated
      * @ordered
@@ -63,9 +63,9 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     protected static final String ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getId()
      * @generated
      * @ordered
@@ -73,9 +73,9 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     protected String id = ID_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getName()
      * @generated
      * @ordered
@@ -83,9 +83,9 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getName()
      * @generated
      * @ordered
@@ -93,9 +93,9 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getAttributes() <em>Attributes</em>}'
-     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getAttributes()
      * @generated
      * @ordered
@@ -103,8 +103,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     protected EList<Attributes> attributes;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     protected IdentifiableImpl() {
@@ -112,8 +112,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -122,8 +122,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -132,8 +132,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -145,8 +145,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -155,8 +155,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -168,11 +168,10 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
     @Override
     public EList<Attributes> getAttributes() {
         if (attributes == null) {
@@ -183,8 +182,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -197,8 +196,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -215,8 +214,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -238,8 +237,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -259,8 +258,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -277,8 +276,8 @@ public abstract class IdentifiableImpl extends MinimalEObjectImpl.Container impl
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override

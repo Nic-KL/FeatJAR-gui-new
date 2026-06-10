@@ -20,10 +20,9 @@
  */
 package de.featjar.gui.launch;
 
+import de.featjar.gui.policy.FeatureModelGLSPServer;
 import org.eclipse.glsp.server.di.ServerModule;
 import org.eclipse.glsp.server.protocol.GLSPServer;
-
-import de.featjar.gui.policy.FeatureModelGLSPServer;
 
 public class FeatureModelServerModule extends ServerModule {
 

@@ -30,16 +30,16 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
- * end-user-doc -->
- *
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
  * @generated
  */
 public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     public static FeatJARFactory init() {
@@ -56,9 +56,9 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc
-     * -->
-     *
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     public FeatJARFactoryImpl() {
@@ -66,8 +66,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -91,8 +91,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -102,8 +102,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -113,8 +113,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -124,8 +124,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -135,8 +135,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -146,8 +146,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -157,8 +157,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -167,8 +167,8 @@ public class FeatJARFactoryImpl extends EFactoryImpl implements FeatJARFactory {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @deprecated
      * @generated
      */

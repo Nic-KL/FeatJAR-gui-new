@@ -19,6 +19,8 @@ target/
 /bin/
 /logs/
 
+fallback_logger.log
+
 
 *.old
 *.off

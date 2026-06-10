@@ -20,10 +20,9 @@
  */
 package de.featjar.gui.handler.create.group;
 
-import de.featjar.gui.handler.AGroupNodeHandler;
 import de.featjar.gui.types.NodeType;
 
-public class CreateXorGroupNodeHandler extends AGroupNodeHandler {
+public class CreateXorGroupNodeHandler extends ACreateGroupNodeHandler {
     public CreateXorGroupNodeHandler() {
         super(NodeType.XOR_NODE.value());
     }

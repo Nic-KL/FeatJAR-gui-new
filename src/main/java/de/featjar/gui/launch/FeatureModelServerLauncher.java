@@ -20,6 +20,7 @@
  */
 package de.featjar.gui.launch;
 
+import de.featjar.gui.policy.FeatureModelDiagramModule;
 import org.apache.commons.cli.ParseException;
 import org.eclipse.elk.alg.layered.options.LayeredMetaDataProvider;
 import org.eclipse.glsp.layout.ElkLayoutEngine;
@@ -29,8 +30,6 @@ import org.eclipse.glsp.server.launch.GLSPServerLauncher;
 import org.eclipse.glsp.server.launch.SocketGLSPServerLauncher;
 import org.eclipse.glsp.server.utils.LaunchUtil;
 import org.eclipse.glsp.server.websocket.WebsocketServerLauncher;
-
-import de.featjar.gui.policy.FeatureModelDiagramModule;
 
 public final class FeatureModelServerLauncher {
 
@@ -49,10 +48,8 @@ public final class FeatureModelServerLauncher {
             String host = parser.parseHostname();
             ServerModule featureModelServerModule =
                     new ServerModule().configureDiagramModule(new FeatureModelDiagramModule());
-
             GLSPServerLauncher launcher = !parser.isServer()
-                    ? new WebsocketServerLauncher(
-                            featureModelServerModule, "/featuremodel", parser.parseWebsocketLogLevel())
+                    ? new WebsocketServerLauncher(featureModelServerModule, "/featuremodel")
                     : new SocketGLSPServerLauncher(featureModelServerModule);
 
             launcher.start(host, port, parser);

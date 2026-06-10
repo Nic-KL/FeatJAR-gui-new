@@ -26,16 +26,17 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object
- * '<em><b>Identifiable</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Identifiable</b></em>'.
+ * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link featJAR.Identifiable#getId <em>Id</em>}</li>
- * <li>{@link featJAR.Identifiable#getName <em>Name</em>}</li>
- * <li>{@link featJAR.Identifiable#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link featJAR.Identifiable#getId <em>Id</em>}</li>
+ *   <li>{@link featJAR.Identifiable#getName <em>Name</em>}</li>
+ *   <li>{@link featJAR.Identifiable#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @see featJAR.FeatJARPackage#getIdentifiable()
@@ -44,9 +45,9 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Identifiable extends EObject {
     /**
-     * Returns the value of the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * Returns the value of the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Id</em>' attribute.
      * @see #setId(String)
      * @see featJAR.FeatJARPackage#getIdentifiable_Id()
@@ -56,9 +57,9 @@ public interface Identifiable extends EObject {
     String getId();
 
     /**
-     * Sets the value of the '{@link featJAR.Identifiable#getId <em>Id</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Sets the value of the '{@link featJAR.Identifiable#getId <em>Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Id</em>' attribute.
      * @see #getId()
      * @generated
@@ -66,9 +67,9 @@ public interface Identifiable extends EObject {
     void setId(String value);
 
     /**
-     * Returns the value of the '<em><b>Name</b></em>' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see featJAR.FeatJARPackage#getIdentifiable_Name()
@@ -78,9 +79,9 @@ public interface Identifiable extends EObject {
     String getName();
 
     /**
-     * Sets the value of the '{@link featJAR.Identifiable#getName <em>Name</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Sets the value of the '{@link featJAR.Identifiable#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Name</em>' attribute.
      * @see #getName()
      * @generated
@@ -88,10 +89,10 @@ public interface Identifiable extends EObject {
     void setName(String value);
 
     /**
-     * Returns the value of the '<em><b>Attributes</b></em>' containment reference
-     * list. The list contents are of type {@link featJAR.Attributes}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+     * The list contents are of type {@link featJAR.Attributes}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Attributes</em>' containment reference list.
      * @see featJAR.FeatJARPackage#getIdentifiable_Attributes()
      * @model containment="true"

@@ -21,7 +21,6 @@
 package de.featjar.gui.handler.create;
 
 import com.google.inject.Inject;
-
 import de.featjar.gui.types.FeatureModelLables;
 import java.util.Optional;
 import org.eclipse.emf.common.command.Command;
@@ -30,8 +29,7 @@ import org.eclipse.glsp.server.emf.EMFIdGenerator;
 import org.eclipse.glsp.server.emf.notation.EMFNotationModelState;
 import org.eclipse.glsp.server.operations.CreateNodeOperation;
 
-public class CreateConstraintOperationHandler extends EMFCreateOperationHandler<CreateNodeOperation>
-        {
+public class CreateConstraintOperationHandler extends EMFCreateOperationHandler<CreateNodeOperation> {
 
     @Inject
     protected EMFNotationModelState modelState;

@@ -35,24 +35,24 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Feature
- * Model</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Feature Model</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link featJAR.impl.FeatureModelImpl#getRoots <em>Roots</em>}</li>
- * <li>{@link featJAR.impl.FeatureModelImpl#getConstraints
- * <em>Constraints</em>}</li>
+ *   <li>{@link featJAR.impl.FeatureModelImpl#getRoots <em>Roots</em>}</li>
+ *   <li>{@link featJAR.impl.FeatureModelImpl#getConstraints <em>Constraints</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     /**
-     * The cached value of the '{@link #getRoots() <em>Roots</em>}' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getRoots() <em>Roots</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getRoots()
      * @generated
      * @ordered
@@ -60,9 +60,9 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     protected EList<Feature> roots;
 
     /**
-     * The cached value of the '{@link #getConstraints() <em>Constraints</em>}'
-     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getConstraints()
      * @generated
      * @ordered
@@ -70,8 +70,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     protected EList<Constraint> constraints;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     protected FeatureModelImpl() {
@@ -79,8 +79,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -89,8 +89,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -102,8 +102,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -116,8 +116,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -132,8 +132,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -148,8 +148,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -169,8 +169,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -187,8 +187,8 @@ public class FeatureModelImpl extends IdentifiableImpl implements FeatureModel {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override

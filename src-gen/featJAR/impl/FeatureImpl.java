@@ -38,36 +38,25 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object
- * '<em><b>Feature</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Feature</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link featJAR.impl.FeatureImpl#getParent <em>Parent</em>}</li>
- * <li>{@link featJAR.impl.FeatureImpl#getGroupNodeList <em>Group Node
- * List</em>}</li>
- * <li>{@link featJAR.impl.FeatureImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link featJAR.impl.FeatureImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link featJAR.impl.FeatureImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link featJAR.impl.FeatureImpl#getGroupNodeList <em>Group Node List</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FeatureImpl extends IdentifiableImpl implements Feature {
     /**
-     * The cached value of the '{@link #getGroupNodeList() <em>Group Node
-     * List</em>}' containment reference list. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see #getGroupNodeList()
-     * @generated
-     * @ordered
-     */
-    protected EList<GroupNode> groupNodeList;
-
-    /**
-     * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}'
-     * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getCardinality()
      * @generated
      * @ordered
@@ -75,8 +64,18 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     protected Cardinality cardinality;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getGroupNodeList() <em>Group Node List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getGroupNodeList()
+     * @generated
+     * @ordered
+     */
+    protected EList<GroupNode> groupNodeList;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     protected FeatureImpl() {
@@ -84,8 +83,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -94,8 +93,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -105,8 +104,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     public NotificationChain basicSetParent(GroupNode newParent, NotificationChain msgs) {
@@ -115,8 +114,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -138,22 +137,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EList<GroupNode> getGroupNodeList() {
-        if (groupNodeList == null) {
-            groupNodeList = new EObjectContainmentWithInverseEList<GroupNode>(
-                    GroupNode.class, this, FeatJARPackage.FEATURE__GROUP_NODE_LIST, FeatJARPackage.GROUP_NODE__PARENT);
-        }
-        return groupNodeList;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -162,8 +147,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
@@ -179,8 +164,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -201,8 +186,22 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList<GroupNode> getGroupNodeList() {
+        if (groupNodeList == null) {
+            groupNodeList = new EObjectContainmentWithInverseEList<GroupNode>(
+                    GroupNode.class, this, FeatJARPackage.FEATURE__GROUP_NODE_LIST, FeatJARPackage.GROUP_NODE__PARENT);
+        }
+        return groupNodeList;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -220,8 +219,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -229,17 +228,17 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
         switch (featureID) {
             case FeatJARPackage.FEATURE__PARENT:
                 return basicSetParent(null, msgs);
-            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
-                return ((InternalEList<?>) getGroupNodeList()).basicRemove(otherEnd, msgs);
             case FeatJARPackage.FEATURE__CARDINALITY:
                 return basicSetCardinality(null, msgs);
+            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
+                return ((InternalEList<?>) getGroupNodeList()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -253,8 +252,8 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -262,17 +261,17 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
         switch (featureID) {
             case FeatJARPackage.FEATURE__PARENT:
                 return getParent();
-            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
-                return getGroupNodeList();
             case FeatJARPackage.FEATURE__CARDINALITY:
                 return getCardinality();
+            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
+                return getGroupNodeList();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -282,20 +281,20 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
             case FeatJARPackage.FEATURE__PARENT:
                 setParent((GroupNode) newValue);
                 return;
+            case FeatJARPackage.FEATURE__CARDINALITY:
+                setCardinality((Cardinality) newValue);
+                return;
             case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
                 getGroupNodeList().clear();
                 getGroupNodeList().addAll((Collection<? extends GroupNode>) newValue);
-                return;
-            case FeatJARPackage.FEATURE__CARDINALITY:
-                setCardinality((Cardinality) newValue);
                 return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -304,19 +303,19 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
             case FeatJARPackage.FEATURE__PARENT:
                 setParent((GroupNode) null);
                 return;
-            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
-                getGroupNodeList().clear();
-                return;
             case FeatJARPackage.FEATURE__CARDINALITY:
                 setCardinality((Cardinality) null);
+                return;
+            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
+                getGroupNodeList().clear();
                 return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -324,10 +323,10 @@ public class FeatureImpl extends IdentifiableImpl implements Feature {
         switch (featureID) {
             case FeatJARPackage.FEATURE__PARENT:
                 return getParent() != null;
-            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
-                return groupNodeList != null && !groupNodeList.isEmpty();
             case FeatJARPackage.FEATURE__CARDINALITY:
                 return cardinality != null;
+            case FeatJARPackage.FEATURE__GROUP_NODE_LIST:
+                return groupNodeList != null && !groupNodeList.isEmpty();
         }
         return super.eIsSet(featureID);
     }

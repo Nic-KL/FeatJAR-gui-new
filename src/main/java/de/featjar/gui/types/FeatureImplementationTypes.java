@@ -20,15 +20,25 @@
  */
 package de.featjar.gui.types;
 
+import java.util.Optional;
+
 public enum FeatureImplementationTypes {
-    NONE("feature-none"),
-    ABSTRACT("feature-abstract"),
-    CONCRETE("feature-concrete");
+    NONE("none"),
+    ABSTRACT("abstract"),
+    CONCRETE("concrete");
 
     private final String value;
 
     private FeatureImplementationTypes(String value) {
         this.value = value;
+    }
+
+    public static Optional<FeatureImplementationTypes> fromValue(String val) {
+        for (FeatureImplementationTypes fit : values()) {
+            if (fit.value().equals(val)) return Optional.of(fit);
+        }
+        return Optional.empty();
+        // throw new IllegalArgumentException("Unknown FeatureImplementationTypes: " + val);
     }
 
     public String value() {

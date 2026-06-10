@@ -203,6 +203,8 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
                     .text(identifiable.getName())
                     .id(identifiable.getId() + "_label")
                     .build());
+        } else {
+        	nodeBuilder.size(GraphUtil.dimension(nodeWidth, nodeHeight));
         }
 
         // Experimentell ports

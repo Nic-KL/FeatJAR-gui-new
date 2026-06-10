@@ -18,12 +18,12 @@
  *
  * See <https://github.com/FeatureIDE> for further information.
  */
-package de.featjar.gui.handler;
+package de.featjar.gui.handler.create.feature;
 
 import com.google.inject.Inject;
-import de.featjar.gui.handler.utils.HandlerUtils;
 import de.featjar.gui.handler.utils.AttributeKeysUtils;
 import de.featjar.gui.handler.utils.CardinialityUtils;
+import de.featjar.gui.handler.utils.HandlerUtils;
 import de.featjar.gui.types.CardinalityType;
 import de.featjar.gui.types.FeatureImplementationTypes;
 import featJAR.FeatJARFactory;
@@ -41,7 +41,7 @@ import org.eclipse.glsp.server.emf.EMFIdGenerator;
 import org.eclipse.glsp.server.emf.notation.EMFNotationModelState;
 import org.eclipse.glsp.server.operations.CreateNodeOperation;
 
-public abstract class AFeatureNodeHandler extends EMFCreateOperationHandler<CreateNodeOperation> {
+public abstract class ACreateFeatureNodeHandler extends EMFCreateOperationHandler<CreateNodeOperation> {
 
     @Inject
     protected EMFNotationModelState modelState;
@@ -56,7 +56,7 @@ public abstract class AFeatureNodeHandler extends EMFCreateOperationHandler<Crea
         return Optional.of(createFeatureAndNode());
     }
 
-    protected AFeatureNodeHandler(final String elementTypeId) {
+    protected ACreateFeatureNodeHandler(final String elementTypeId) {
         super(elementTypeId);
     }
 
@@ -111,7 +111,7 @@ public abstract class AFeatureNodeHandler extends EMFCreateOperationHandler<Crea
     private Optional<Feature> createFeature(final String label, FeatureImplementationTypes featureType) {
         Feature newFeature = FeatJARFactory.eINSTANCE.createFeature();
 
-        AttributeKeysUtils.setFeatureType(newFeature, featureType);
+        AttributeKeysUtils.setFeatureImplementationType(newFeature, featureType);
 
         idGenerator.getOrCreateId(newFeature); // sets ID if not already set
         newFeature.setName(label + "-" + featureCounter++);
@@ -120,7 +120,7 @@ public abstract class AFeatureNodeHandler extends EMFCreateOperationHandler<Crea
 
         //      FeatureCardinalityType type = FeatureCardinalityType.valueOf(getHandledElementTypeIds().get(0));
         CardinalityType type =
-                CardinalityType.fromGlspId(getHandledElementTypeIds().get(0));
+                CardinalityType.fromValue(getHandledElementTypeIds().get(0));
 
         switch (type) {
             case MANDATORY_FEATURE:
@@ -130,7 +130,7 @@ public abstract class AFeatureNodeHandler extends EMFCreateOperationHandler<Crea
                 newFeature.setCardinality(CardinialityUtils.createCardinality(0, 1));
                 break;
             case MULTIPLE_FEATURE: // TODO dummy vars change !
-                newFeature.setCardinality(CardinialityUtils.createCardinality(2, 5));
+                newFeature.setCardinality(CardinialityUtils.createCardinality(13, 37));
                 break;
             default:
                 break;

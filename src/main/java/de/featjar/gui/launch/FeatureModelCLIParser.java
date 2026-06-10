@@ -22,17 +22,12 @@ package de.featjar.gui.launch;
 
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-import org.apache.logging.log4j.Level;
 import org.eclipse.glsp.server.launch.DefaultCLIParser;
 
 public class FeatureModelCLIParser extends DefaultCLIParser {
     public static final String OPTION_WEBSOCKET = "websocket";
     public static final String OPTION_SERVER = "server";
     public static final String OPTION_JETTY_LOG_LEVEL = "jettyLogLevel";
-
-    public static final class WorkflowOptions {
-        public static final Level WEBSOCKET_LOG_LEVEL = Level.INFO;
-    }
 
     public FeatureModelCLIParser(final String[] args, final String processName) throws ParseException {
         super(args, FeatureModelCLIParser.getDefaultOptions(), processName);
@@ -44,11 +39,6 @@ public class FeatureModelCLIParser extends DefaultCLIParser {
 
     public boolean isServer() {
         return hasOption(OPTION_SERVER);
-    }
-
-    public Level parseWebsocketLogLevel() {
-        String levelArg = parseOption(OPTION_JETTY_LOG_LEVEL, WorkflowOptions.WEBSOCKET_LOG_LEVEL.toString());
-        return Level.toLevel(levelArg, WorkflowOptions.WEBSOCKET_LOG_LEVEL);
     }
 
     public static Options getDefaultOptions() {

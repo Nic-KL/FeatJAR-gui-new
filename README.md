@@ -1,9 +1,8 @@
 # FeatJAR-gui
 
-This repository contains classes for enabling a graphical user interface for [FeatJAR](https://github.com/FeatureIDE/FeatJAR#).
-The entire project also depends on two additional repositories:
-* [FeatJAr-gui-dependencies](https://github.com/Nic-KL/FeatJAR-gui-dependencies)
-* [FeatJAr-gui-client](https://github.com/Nic-KL/FeatJAR-gui-client)
+The project introduces a graphical user interface for [FeatJAR](https://github.com/FeatureIDE/FeatJAR#).
+
+This repository contains the backend server which also needs the [FeatJAr-gui-client](https://github.com/Nic-KL/FeatJAR-gui-client) to render feature models.
 
 Some functionality included in this module:
 
@@ -11,7 +10,7 @@ Some functionality included in this module:
 
 ## TODOs
 
-* Implement GLSP
+* 
 
 ## License
 

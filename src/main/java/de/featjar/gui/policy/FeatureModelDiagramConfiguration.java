@@ -22,6 +22,7 @@ package de.featjar.gui.policy;
 
 import de.featjar.gui.types.CardinalityType;
 import de.featjar.gui.types.EdgeType;
+import de.featjar.gui.types.FeatureModelLables;
 import de.featjar.gui.types.NodeType;
 import java.util.List;
 import org.eclipse.glsp.server.diagram.BaseDiagramConfiguration;
@@ -47,7 +48,7 @@ public class FeatureModelDiagramConfiguration extends BaseDiagramConfiguration {
         return List.of(
                 new ShapeTypeHint(CardinalityType.MANDATORY_FEATURE.value(), false, true, false, true),
                 new ShapeTypeHint(CardinalityType.OPTIONAL_FEATURE.value(), false, true, false, true),
-                new ShapeTypeHint(FeatureModelTypes.ROOT_FEATURE, false, false, false, false),
+                new ShapeTypeHint(FeatureModelLables.ROOT_FEATURE, false, false, false, false),
                 new ShapeTypeHint(NodeType.AND_NODE.value(), false, true, false, true));
     }
 

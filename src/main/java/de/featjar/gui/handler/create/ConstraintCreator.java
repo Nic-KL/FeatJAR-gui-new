@@ -20,6 +20,7 @@
  */
 package de.featjar.gui.handler.create;
 
+import de.featjar.gui.handler.utils.HandlerUtils;
 import featJAR.Constraint;
 import featJAR.FeatJARFactory;
 import featJAR.FeatJARPackage;
@@ -30,8 +31,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.glsp.server.emf.EMFIdGenerator;
 import org.eclipse.glsp.server.emf.notation.EMFNotationModelState;
-
-import de.featjar.gui.handler.utils.HandlerUtils;
 
 public final class ConstraintCreator {
 
@@ -54,7 +53,8 @@ public final class ConstraintCreator {
         EObject parentElement = modelState.getSemanticModel(FeatureModel.class).get();
 
         // Create the new feature instance
-        Constraint newConstraint = ConstraintCreator.createConstraint(label, generator).orElseThrow();
+        Constraint newConstraint =
+                ConstraintCreator.createConstraint(label, generator).orElseThrow();
 
         return AddCommand.create(
                 modelState.getEditingDomain(),

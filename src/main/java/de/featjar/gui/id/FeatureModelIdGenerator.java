@@ -38,6 +38,10 @@ public class FeatureModelIdGenerator implements EMFIdGenerator {
     public String getOrCreateId(final EObject element) {
         String id = EcoreUtil.getID(element);
 
+        if (element.eClass().getEIDAttribute() == null) {
+            return EcoreUtil.getURI(element).fragment();
+        }
+
         if (id == null || id.isBlank()) {
             id = UUID.randomUUID().toString().replace("-", "");
             EcoreUtil.setID(element, id);

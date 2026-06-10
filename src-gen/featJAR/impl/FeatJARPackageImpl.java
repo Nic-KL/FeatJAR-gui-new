@@ -38,71 +38,71 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
- * end-user-doc -->
- *
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Package</b>.
+ * <!-- end-user-doc -->
  * @generated
  */
 public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private EClass featureModelEClass = null;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private EClass identifiableEClass = null;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private EClass featureEClass = null;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private EClass constraintEClass = null;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private EClass groupNodeEClass = null;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private EClass attributesEClass = null;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private EClass cardinalityEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-     * package package URI value.
-     * <p>
-     * Note: the correct way to create the package is via the static factory method
-     * {@link #init init()}, which also performs initialization of the package, or
-     * returns the registered package, if one already exists. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+     * package URI value.
+     * <p>Note: the correct way to create the package is via the static
+     * factory method {@link #init init()}, which also performs
+     * initialization of the package, or returns the registered package,
+     * if one already exists.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see featJAR.FeatJARPackage#eNS_URI
      * @see #init()
@@ -113,22 +113,19 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private static boolean isInited = false;
 
     /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and
-     * for any others upon which it depends.
+     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
      *
-     * <p>
-     * This method is used to initialize {@link FeatJARPackage#eINSTANCE} when that
-     * field is accessed. Clients should not invoke it directly. Instead, they
-     * should simply access that field to obtain the package. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * <p>This method is used to initialize {@link FeatJARPackage#eINSTANCE} when that field is accessed.
+     * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -160,8 +157,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -170,8 +167,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -180,8 +177,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -190,8 +187,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -200,8 +197,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -210,8 +207,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -220,8 +217,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -230,8 +227,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -240,8 +237,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -250,28 +247,28 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EReference getFeature_GroupNodeList() {
-        return (EReference) featureEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
     public EReference getFeature_Cardinality() {
+        return (EReference) featureEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getFeature_GroupNodeList() {
         return (EReference) featureEClass.getEStructuralFeatures().get(2);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -280,8 +277,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -290,8 +287,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -300,28 +297,28 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EReference getGroupNode_FeatureList() {
-        return (EReference) groupNodeEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
     public EReference getGroupNode_Cardinality() {
+        return (EReference) groupNodeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getGroupNode_FeatureList() {
         return (EReference) groupNodeEClass.getEStructuralFeatures().get(2);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -330,8 +327,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -340,8 +337,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -350,8 +347,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -360,8 +357,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -370,8 +367,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -380,8 +377,8 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -390,17 +387,17 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private boolean isCreated = false;
 
     /**
-     * Creates the meta-model objects for the package. This method is guarded to
-     * have no affect on any invocation but its first. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
+     * Creates the meta-model objects for the package.  This method is
+     * guarded to have no affect on any invocation but its first.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     public void createPackageContents() {
@@ -419,15 +416,15 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
 
         featureEClass = createEClass(FEATURE);
         createEReference(featureEClass, FEATURE__PARENT);
-        createEReference(featureEClass, FEATURE__GROUP_NODE_LIST);
         createEReference(featureEClass, FEATURE__CARDINALITY);
+        createEReference(featureEClass, FEATURE__GROUP_NODE_LIST);
 
         constraintEClass = createEClass(CONSTRAINT);
 
         groupNodeEClass = createEClass(GROUP_NODE);
         createEReference(groupNodeEClass, GROUP_NODE__PARENT);
-        createEReference(groupNodeEClass, GROUP_NODE__FEATURE_LIST);
         createEReference(groupNodeEClass, GROUP_NODE__CARDINALITY);
+        createEReference(groupNodeEClass, GROUP_NODE__FEATURE_LIST);
 
         attributesEClass = createEClass(ATTRIBUTES);
         createEAttribute(attributesEClass, ATTRIBUTES__KEY);
@@ -439,17 +436,17 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     private boolean isInitialized = false;
 
     /**
-     * Complete the initialization of the package and its meta-model. This method is
-     * guarded to have no affect on any invocation but its first. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Complete the initialization of the package and its meta-model.  This
+     * method is guarded to have no affect on any invocation but its first.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     public void initializePackageContents() {
@@ -594,13 +591,13 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
                 !IS_DERIVED,
                 IS_ORDERED);
         initEReference(
-                getFeature_GroupNodeList(),
-                this.getGroupNode(),
-                this.getGroupNode_Parent(),
-                "groupNodeList",
+                getFeature_Cardinality(),
+                this.getCardinality(),
                 null,
-                0,
-                -1,
+                "cardinality",
+                null,
+                1,
+                1,
                 Feature.class,
                 !IS_TRANSIENT,
                 !IS_VOLATILE,
@@ -612,13 +609,13 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
                 !IS_DERIVED,
                 IS_ORDERED);
         initEReference(
-                getFeature_Cardinality(),
-                this.getCardinality(),
+                getFeature_GroupNodeList(),
+                this.getGroupNode(),
+                this.getGroupNode_Parent(),
+                "groupNodeList",
                 null,
-                "cardinality",
-                null,
-                1,
-                1,
+                0,
+                -1,
                 Feature.class,
                 !IS_TRANSIENT,
                 !IS_VOLATILE,
@@ -664,13 +661,13 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
                 !IS_DERIVED,
                 IS_ORDERED);
         initEReference(
-                getGroupNode_FeatureList(),
-                this.getFeature(),
-                this.getFeature_Parent(),
-                "featureList",
+                getGroupNode_Cardinality(),
+                this.getCardinality(),
                 null,
-                0,
-                -1,
+                "cardinality",
+                null,
+                1,
+                1,
                 GroupNode.class,
                 !IS_TRANSIENT,
                 !IS_VOLATILE,
@@ -682,13 +679,13 @@ public class FeatJARPackageImpl extends EPackageImpl implements FeatJARPackage {
                 !IS_DERIVED,
                 IS_ORDERED);
         initEReference(
-                getGroupNode_Cardinality(),
-                this.getCardinality(),
+                getGroupNode_FeatureList(),
+                this.getFeature(),
+                this.getFeature_Parent(),
+                "featureList",
                 null,
-                "cardinality",
-                null,
-                1,
-                1,
+                0,
+                -1,
                 GroupNode.class,
                 !IS_TRANSIENT,
                 !IS_VOLATILE,

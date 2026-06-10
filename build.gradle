@@ -3,10 +3,38 @@ plugins {
     id 'de.featjar.java-application'
 }
 
+def isGui = true
+def mainClassVar = isGui ? 'de.featjar.gui.Gui' : 'de.featjar.gui.launch.FeatureModelServerLauncher'
+
+group = 'de.featjar.gui'
+description = 'FeatJar-Gui-Server'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
 dependencies {
     api 'de.featjar:feature-model'
     api 'de.featjar:uvl'
     api testFixtures('de.featjar:formula')
+
+    implementation 'org.eclipse.glsp:org.eclipse.glsp.server:2.6.0'
+    implementation 'org.eclipse.glsp:org.eclipse.glsp.server.websocket:2.6.0'
+    implementation 'org.eclipse.glsp:org.eclipse.glsp.layout:2.6.0'
+    implementation 'org.eclipse.glsp:org.eclipse.glsp.server.emf:2.6.0'
+
+    implementation "org.eclipse.emf:org.eclipse.emf.ecore.edit:2.15.0"
+    implementation "org.eclipse.emf:org.eclipse.emf.edit:2.23.0"
+    
+    implementation("org.apache.commons:commons-text:1.15.0")
+
+    runtimeOnly 'org.apache.logging.log4j:log4j-core:2.24.3'
+
+    implementation('org.eclipse.elk:org.eclipse.elk.alg.layered:0.8.1') {
+        exclude group: 'log4j', module: 'log4j'
+    }
+    
 }
 
 license {
@@ -15,41 +43,11 @@ license {
     }
 }
 
-def isGui = true
-def mainClassVar = isGui ? 'de.featjar.gui.Gui' : 'de.featjar.gui.launch.FeatureModelServerLauncher'
-
-group = 'de.featjar.gui'
-version = '2.6.0-SNAPSHOT'
-description = 'FeatJar-Gui-Server'
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 sourceSets {
     main {
         java {
             srcDir 'src-gen'
         }
-    }
-}
-
-ext {
-    elkVersion = '0.8.1'
-}
-
-dependencies {
-    implementation "org.eclipse.glsp:org.eclipse.glsp.server:${project.version}"
-    implementation "org.eclipse.glsp:org.eclipse.glsp.server.websocket:${project.version}"
-    implementation "org.eclipse.glsp:org.eclipse.glsp.layout:${project.version}"
-    implementation "org.eclipse.glsp:org.eclipse.glsp.server.emf:2.5.0"
-    implementation "org.eclipse.emf:org.eclipse.emf.ecore.edit:2.15.0"
-
-    implementation("org.eclipse.emf:org.eclipse.emf.edit:2.23.0")
-
-    implementation("org.eclipse.elk:org.eclipse.elk.alg.layered:${elkVersion}") {
-        exclude group: 'log4j', module: 'log4j'
     }
 }
 
@@ -67,9 +65,7 @@ tasks.named('jar') {
 
 tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
     dependsOn tasks.named('classes')
-
     archiveClassifier.set('all')
-
     from(sourceSets.main.output)
     configurations = [project.configurations.runtimeClasspath]
 

@@ -21,7 +21,6 @@
 package de.featjar.gui.handler.create;
 
 import com.google.inject.Inject;
-
 import java.util.Map;
 import java.util.Optional;
 import org.eclipse.emf.common.command.Command;
@@ -55,7 +54,8 @@ public class PasteOperationHandler extends EMFOperationHandler<PasteOperation> {
                 .findFirst()
                 .map(Map.Entry::getValue)
                 .orElse("");
-        return Optional.of(ConstraintCreator.createConstraintAndPlaceInsideBox(modelState, constraintLabel, idGenerator));
+        return Optional.of(
+                ConstraintCreator.createConstraintAndPlaceInsideBox(modelState, constraintLabel, idGenerator));
     }
 
     @Override

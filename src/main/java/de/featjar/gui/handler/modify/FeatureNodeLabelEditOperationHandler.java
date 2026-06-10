@@ -50,8 +50,8 @@ public class FeatureNodeLabelEditOperationHandler extends EMFOperationHandler<Fe
                 .filter(GLabel.class::isInstance)
                 .map(GLabel.class::cast);
 
-//        List<GLabel> allLabelsList = allLabels.toList();
-              List<GLabel> allLabelsList = allLabels.collect(Collectors.toList()); // Java 11
+        //        List<GLabel> allLabelsList = allLabels.toList();
+        List<GLabel> allLabelsList = allLabels.collect(Collectors.toList()); // Java 11
 
         GLabel foundLabel =
                 HandlerUtils.findLabelById(operation.gLabelId, allLabelsList).orElseThrow(NoSuchElementException::new);

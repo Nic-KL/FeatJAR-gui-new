@@ -28,55 +28,58 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 /**
- * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains
- * accessors for the meta objects to represent
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
  * <ul>
- * <li>each class,</li>
- * <li>each feature of each class,</li>
- * <li>each operation of each class,</li>
- * <li>each enum,</li>
- * <li>and each data type</li>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
  * @see featJAR.FeatJARFactory
  * @model kind="package"
  * @generated
  */
 public interface FeatJARPackage extends EPackage {
     /**
-     * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The package name.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     String eNAME = "featJAR";
 
     /**
-     * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The package namespace URI.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     String eNS_URI = "https://github.com/FeatureIDE/FeatJAR";
 
     /**
-     * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The package namespace name.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     String eNS_PREFIX = "featJAR";
 
     /**
-     * The singleton instance of the package. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
+     * The singleton instance of the package.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     FeatJARPackage eINSTANCE = featJAR.impl.FeatJARPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link featJAR.impl.IdentifiableImpl
-     * <em>Identifiable</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The meta object id for the '{@link featJAR.impl.IdentifiableImpl <em>Identifiable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see featJAR.impl.IdentifiableImpl
      * @see featJAR.impl.FeatJARPackageImpl#getIdentifiable()
      * @generated
@@ -84,54 +87,54 @@ public interface FeatJARPackage extends EPackage {
     int IDENTIFIABLE = 1;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int IDENTIFIABLE__ID = 0;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int IDENTIFIABLE__NAME = 1;
 
     /**
-     * The feature id for the '<em><b>Attributes</b></em>' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int IDENTIFIABLE__ATTRIBUTES = 2;
 
     /**
-     * The number of structural features of the '<em>Identifiable</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of structural features of the '<em>Identifiable</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int IDENTIFIABLE_FEATURE_COUNT = 3;
 
     /**
-     * The number of operations of the '<em>Identifiable</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of operations of the '<em>Identifiable</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int IDENTIFIABLE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link featJAR.impl.FeatureModelImpl <em>Feature
-     * Model</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The meta object id for the '{@link featJAR.impl.FeatureModelImpl <em>Feature Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see featJAR.impl.FeatureModelImpl
      * @see featJAR.impl.FeatJARPackageImpl#getFeatureModel()
      * @generated
@@ -139,27 +142,27 @@ public interface FeatJARPackage extends EPackage {
     int FEATURE_MODEL = 0;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_MODEL__ID = IDENTIFIABLE__ID;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_MODEL__NAME = IDENTIFIABLE__NAME;
 
     /**
-     * The feature id for the '<em><b>Attributes</b></em>' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
@@ -167,44 +170,44 @@ public interface FeatJARPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Roots</b></em>' containment reference list.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_MODEL__ROOTS = IDENTIFIABLE_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Constraints</b></em>' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_MODEL__CONSTRAINTS = IDENTIFIABLE_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>Feature Model</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of structural features of the '<em>Feature Model</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_MODEL_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 2;
 
     /**
-     * The number of operations of the '<em>Feature Model</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of operations of the '<em>Feature Model</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_MODEL_OPERATION_COUNT = IDENTIFIABLE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link featJAR.impl.FeatureImpl
-     * <em>Feature</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The meta object id for the '{@link featJAR.impl.FeatureImpl <em>Feature</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see featJAR.impl.FeatureImpl
      * @see featJAR.impl.FeatJARPackageImpl#getFeature()
      * @generated
@@ -212,81 +215,81 @@ public interface FeatJARPackage extends EPackage {
     int FEATURE = 2;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE__ID = IDENTIFIABLE__ID;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE__NAME = IDENTIFIABLE__NAME;
 
     /**
-     * The feature id for the '<em><b>Attributes</b></em>' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE__ATTRIBUTES = IDENTIFIABLE__ATTRIBUTES;
 
     /**
-     * The feature id for the '<em><b>Parent</b></em>' container reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Parent</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE__PARENT = IDENTIFIABLE_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Group Node List</b></em>' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int FEATURE__GROUP_NODE_LIST = IDENTIFIABLE_FEATURE_COUNT + 1;
-
-    /**
      * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FEATURE__CARDINALITY = IDENTIFIABLE_FEATURE_COUNT + 2;
+    int FEATURE__CARDINALITY = IDENTIFIABLE_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>Feature</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Group Node List</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FEATURE__GROUP_NODE_LIST = IDENTIFIABLE_FEATURE_COUNT + 2;
+
+    /**
+     * The number of structural features of the '<em>Feature</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 3;
 
     /**
-     * The number of operations of the '<em>Feature</em>' class. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The number of operations of the '<em>Feature</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int FEATURE_OPERATION_COUNT = IDENTIFIABLE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link featJAR.impl.ConstraintImpl
-     * <em>Constraint</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The meta object id for the '{@link featJAR.impl.ConstraintImpl <em>Constraint</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see featJAR.impl.ConstraintImpl
      * @see featJAR.impl.FeatJARPackageImpl#getConstraint()
      * @generated
@@ -294,54 +297,54 @@ public interface FeatJARPackage extends EPackage {
     int CONSTRAINT = 3;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CONSTRAINT__ID = IDENTIFIABLE__ID;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CONSTRAINT__NAME = IDENTIFIABLE__NAME;
 
     /**
-     * The feature id for the '<em><b>Attributes</b></em>' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CONSTRAINT__ATTRIBUTES = IDENTIFIABLE__ATTRIBUTES;
 
     /**
-     * The number of structural features of the '<em>Constraint</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of structural features of the '<em>Constraint</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CONSTRAINT_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 0;
 
     /**
-     * The number of operations of the '<em>Constraint</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of operations of the '<em>Constraint</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CONSTRAINT_OPERATION_COUNT = IDENTIFIABLE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link featJAR.impl.GroupNodeImpl <em>Group
-     * Node</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The meta object id for the '{@link featJAR.impl.GroupNodeImpl <em>Group Node</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see featJAR.impl.GroupNodeImpl
      * @see featJAR.impl.FeatJARPackageImpl#getGroupNode()
      * @generated
@@ -349,81 +352,81 @@ public interface FeatJARPackage extends EPackage {
     int GROUP_NODE = 4;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int GROUP_NODE__ID = IDENTIFIABLE__ID;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int GROUP_NODE__NAME = IDENTIFIABLE__NAME;
 
     /**
-     * The feature id for the '<em><b>Attributes</b></em>' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int GROUP_NODE__ATTRIBUTES = IDENTIFIABLE__ATTRIBUTES;
 
     /**
-     * The feature id for the '<em><b>Parent</b></em>' container reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Parent</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int GROUP_NODE__PARENT = IDENTIFIABLE_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Feature List</b></em>' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int GROUP_NODE__FEATURE_LIST = IDENTIFIABLE_FEATURE_COUNT + 1;
-
-    /**
      * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GROUP_NODE__CARDINALITY = IDENTIFIABLE_FEATURE_COUNT + 2;
+    int GROUP_NODE__CARDINALITY = IDENTIFIABLE_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>Group Node</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Feature List</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GROUP_NODE__FEATURE_LIST = IDENTIFIABLE_FEATURE_COUNT + 2;
+
+    /**
+     * The number of structural features of the '<em>Group Node</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int GROUP_NODE_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 3;
 
     /**
-     * The number of operations of the '<em>Group Node</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of operations of the '<em>Group Node</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int GROUP_NODE_OPERATION_COUNT = IDENTIFIABLE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link featJAR.impl.AttributesImpl
-     * <em>Attributes</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The meta object id for the '{@link featJAR.impl.AttributesImpl <em>Attributes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see featJAR.impl.AttributesImpl
      * @see featJAR.impl.FeatJARPackageImpl#getAttributes()
      * @generated
@@ -431,45 +434,45 @@ public interface FeatJARPackage extends EPackage {
     int ATTRIBUTES = 5;
 
     /**
-     * The feature id for the '<em><b>Key</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Key</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int ATTRIBUTES__KEY = 0;
 
     /**
-     * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int ATTRIBUTES__VALUE = 1;
 
     /**
-     * The number of structural features of the '<em>Attributes</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of structural features of the '<em>Attributes</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int ATTRIBUTES_FEATURE_COUNT = 2;
 
     /**
-     * The number of operations of the '<em>Attributes</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of operations of the '<em>Attributes</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int ATTRIBUTES_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link featJAR.impl.CardinalityImpl
-     * <em>Cardinality</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The meta object id for the '{@link featJAR.impl.CardinalityImpl <em>Cardinality</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see featJAR.impl.CardinalityImpl
      * @see featJAR.impl.FeatJARPackageImpl#getCardinality()
      * @generated
@@ -477,45 +480,45 @@ public interface FeatJARPackage extends EPackage {
     int CARDINALITY = 6;
 
     /**
-     * The feature id for the '<em><b>Lower Bound</b></em>' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CARDINALITY__LOWER_BOUND = 0;
 
     /**
-     * The feature id for the '<em><b>Upper Bound</b></em>' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CARDINALITY__UPPER_BOUND = 1;
 
     /**
-     * The number of structural features of the '<em>Cardinality</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of structural features of the '<em>Cardinality</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CARDINALITY_FEATURE_COUNT = 2;
 
     /**
-     * The number of operations of the '<em>Cardinality</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The number of operations of the '<em>Cardinality</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
     int CARDINALITY_OPERATION_COUNT = 0;
 
     /**
-     * Returns the meta object for class '{@link featJAR.FeatureModel <em>Feature
-     * Model</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for class '{@link featJAR.FeatureModel <em>Feature Model</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for class '<em>Feature Model</em>'.
      * @see featJAR.FeatureModel
      * @generated
@@ -523,10 +526,9 @@ public interface FeatJARPackage extends EPackage {
     EClass getFeatureModel();
 
     /**
-     * Returns the meta object for the containment reference list
-     * '{@link featJAR.FeatureModel#getRoots <em>Roots</em>}'. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the containment reference list '{@link featJAR.FeatureModel#getRoots <em>Roots</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the containment reference list '<em>Roots</em>'.
      * @see featJAR.FeatureModel#getRoots()
      * @see #getFeatureModel()
@@ -535,12 +537,10 @@ public interface FeatJARPackage extends EPackage {
     EReference getFeatureModel_Roots();
 
     /**
-     * Returns the meta object for the containment reference list
-     * '{@link featJAR.FeatureModel#getConstraints <em>Constraints</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the containment reference list
-     *         '<em>Constraints</em>'.
+     * Returns the meta object for the containment reference list '{@link featJAR.FeatureModel#getConstraints <em>Constraints</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Constraints</em>'.
      * @see featJAR.FeatureModel#getConstraints()
      * @see #getFeatureModel()
      * @generated
@@ -548,9 +548,9 @@ public interface FeatJARPackage extends EPackage {
     EReference getFeatureModel_Constraints();
 
     /**
-     * Returns the meta object for class '{@link featJAR.Identifiable
-     * <em>Identifiable</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for class '{@link featJAR.Identifiable <em>Identifiable</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for class '<em>Identifiable</em>'.
      * @see featJAR.Identifiable
      * @generated
@@ -558,9 +558,9 @@ public interface FeatJARPackage extends EPackage {
     EClass getIdentifiable();
 
     /**
-     * Returns the meta object for the attribute '{@link featJAR.Identifiable#getId
-     * <em>Id</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the attribute '{@link featJAR.Identifiable#getId <em>Id</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Id</em>'.
      * @see featJAR.Identifiable#getId()
      * @see #getIdentifiable()
@@ -569,10 +569,9 @@ public interface FeatJARPackage extends EPackage {
     EAttribute getIdentifiable_Id();
 
     /**
-     * Returns the meta object for the attribute
-     * '{@link featJAR.Identifiable#getName <em>Name</em>}'. <!-- begin-user-doc -->
+     * Returns the meta object for the attribute '{@link featJAR.Identifiable#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
      * @return the meta object for the attribute '<em>Name</em>'.
      * @see featJAR.Identifiable#getName()
      * @see #getIdentifiable()
@@ -581,12 +580,10 @@ public interface FeatJARPackage extends EPackage {
     EAttribute getIdentifiable_Name();
 
     /**
-     * Returns the meta object for the containment reference list
-     * '{@link featJAR.Identifiable#getAttributes <em>Attributes</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the containment reference list
-     *         '<em>Attributes</em>'.
+     * Returns the meta object for the containment reference list '{@link featJAR.Identifiable#getAttributes <em>Attributes</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Attributes</em>'.
      * @see featJAR.Identifiable#getAttributes()
      * @see #getIdentifiable()
      * @generated
@@ -595,8 +592,8 @@ public interface FeatJARPackage extends EPackage {
 
     /**
      * Returns the meta object for class '{@link featJAR.Feature <em>Feature</em>}'.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for class '<em>Feature</em>'.
      * @see featJAR.Feature
      * @generated
@@ -604,10 +601,9 @@ public interface FeatJARPackage extends EPackage {
     EClass getFeature();
 
     /**
-     * Returns the meta object for the container reference
-     * '{@link featJAR.Feature#getParent <em>Parent</em>}'. <!-- begin-user-doc -->
+     * Returns the meta object for the container reference '{@link featJAR.Feature#getParent <em>Parent</em>}'.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
      * @return the meta object for the container reference '<em>Parent</em>'.
      * @see featJAR.Feature#getParent()
      * @see #getFeature()
@@ -616,23 +612,9 @@ public interface FeatJARPackage extends EPackage {
     EReference getFeature_Parent();
 
     /**
-     * Returns the meta object for the containment reference list
-     * '{@link featJAR.Feature#getGroupNodeList <em>Group Node List</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the containment reference list '<em>Group Node
-     *         List</em>'.
-     * @see featJAR.Feature#getGroupNodeList()
-     * @see #getFeature()
-     * @generated
-     */
-    EReference getFeature_GroupNodeList();
-
-    /**
-     * Returns the meta object for the containment reference
-     * '{@link featJAR.Feature#getCardinality <em>Cardinality</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the containment reference '{@link featJAR.Feature#getCardinality <em>Cardinality</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the containment reference '<em>Cardinality</em>'.
      * @see featJAR.Feature#getCardinality()
      * @see #getFeature()
@@ -641,9 +623,20 @@ public interface FeatJARPackage extends EPackage {
     EReference getFeature_Cardinality();
 
     /**
-     * Returns the meta object for class '{@link featJAR.Constraint
-     * <em>Constraint</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the containment reference list '{@link featJAR.Feature#getGroupNodeList <em>Group Node List</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Group Node List</em>'.
+     * @see featJAR.Feature#getGroupNodeList()
+     * @see #getFeature()
+     * @generated
+     */
+    EReference getFeature_GroupNodeList();
+
+    /**
+     * Returns the meta object for class '{@link featJAR.Constraint <em>Constraint</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for class '<em>Constraint</em>'.
      * @see featJAR.Constraint
      * @generated
@@ -651,9 +644,9 @@ public interface FeatJARPackage extends EPackage {
     EClass getConstraint();
 
     /**
-     * Returns the meta object for class '{@link featJAR.GroupNode <em>Group
-     * Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for class '{@link featJAR.GroupNode <em>Group Node</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for class '<em>Group Node</em>'.
      * @see featJAR.GroupNode
      * @generated
@@ -661,10 +654,9 @@ public interface FeatJARPackage extends EPackage {
     EClass getGroupNode();
 
     /**
-     * Returns the meta object for the container reference
-     * '{@link featJAR.GroupNode#getParent <em>Parent</em>}'. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the container reference '{@link featJAR.GroupNode#getParent <em>Parent</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the container reference '<em>Parent</em>'.
      * @see featJAR.GroupNode#getParent()
      * @see #getGroupNode()
@@ -673,23 +665,9 @@ public interface FeatJARPackage extends EPackage {
     EReference getGroupNode_Parent();
 
     /**
-     * Returns the meta object for the containment reference list
-     * '{@link featJAR.GroupNode#getFeatureList <em>Feature List</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the containment reference list '<em>Feature
-     *         List</em>'.
-     * @see featJAR.GroupNode#getFeatureList()
-     * @see #getGroupNode()
-     * @generated
-     */
-    EReference getGroupNode_FeatureList();
-
-    /**
-     * Returns the meta object for the containment reference
-     * '{@link featJAR.GroupNode#getCardinality <em>Cardinality</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the containment reference '{@link featJAR.GroupNode#getCardinality <em>Cardinality</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the containment reference '<em>Cardinality</em>'.
      * @see featJAR.GroupNode#getCardinality()
      * @see #getGroupNode()
@@ -698,9 +676,20 @@ public interface FeatJARPackage extends EPackage {
     EReference getGroupNode_Cardinality();
 
     /**
-     * Returns the meta object for class '{@link featJAR.Attributes
-     * <em>Attributes</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the containment reference list '{@link featJAR.GroupNode#getFeatureList <em>Feature List</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Feature List</em>'.
+     * @see featJAR.GroupNode#getFeatureList()
+     * @see #getGroupNode()
+     * @generated
+     */
+    EReference getGroupNode_FeatureList();
+
+    /**
+     * Returns the meta object for class '{@link featJAR.Attributes <em>Attributes</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for class '<em>Attributes</em>'.
      * @see featJAR.Attributes
      * @generated
@@ -708,9 +697,9 @@ public interface FeatJARPackage extends EPackage {
     EClass getAttributes();
 
     /**
-     * Returns the meta object for the attribute '{@link featJAR.Attributes#getKey
-     * <em>Key</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the attribute '{@link featJAR.Attributes#getKey <em>Key</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Key</em>'.
      * @see featJAR.Attributes#getKey()
      * @see #getAttributes()
@@ -719,9 +708,9 @@ public interface FeatJARPackage extends EPackage {
     EAttribute getAttributes_Key();
 
     /**
-     * Returns the meta object for the attribute '{@link featJAR.Attributes#getValue
-     * <em>Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the attribute '{@link featJAR.Attributes#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Value</em>'.
      * @see featJAR.Attributes#getValue()
      * @see #getAttributes()
@@ -730,9 +719,9 @@ public interface FeatJARPackage extends EPackage {
     EAttribute getAttributes_Value();
 
     /**
-     * Returns the meta object for class '{@link featJAR.Cardinality
-     * <em>Cardinality</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for class '{@link featJAR.Cardinality <em>Cardinality</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for class '<em>Cardinality</em>'.
      * @see featJAR.Cardinality
      * @generated
@@ -740,10 +729,9 @@ public interface FeatJARPackage extends EPackage {
     EClass getCardinality();
 
     /**
-     * Returns the meta object for the attribute
-     * '{@link featJAR.Cardinality#getLowerBound <em>Lower Bound</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the attribute '{@link featJAR.Cardinality#getLowerBound <em>Lower Bound</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Lower Bound</em>'.
      * @see featJAR.Cardinality#getLowerBound()
      * @see #getCardinality()
@@ -752,10 +740,9 @@ public interface FeatJARPackage extends EPackage {
     EAttribute getCardinality_LowerBound();
 
     /**
-     * Returns the meta object for the attribute
-     * '{@link featJAR.Cardinality#getUpperBound <em>Upper Bound</em>}'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for the attribute '{@link featJAR.Cardinality#getUpperBound <em>Upper Bound</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Upper Bound</em>'.
      * @see featJAR.Cardinality#getUpperBound()
      * @see #getCardinality()
@@ -764,32 +751,32 @@ public interface FeatJARPackage extends EPackage {
     EAttribute getCardinality_UpperBound();
 
     /**
-     * Returns the factory that creates the instances of the model. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the factory that creates the instances of the model.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @return the factory that creates the instances of the model.
      * @generated
      */
     FeatJARFactory getFeatJARFactory();
 
     /**
-     * <!-- begin-user-doc --> Defines literals for the meta objects that represent
+     * <!-- begin-user-doc -->
+     * Defines literals for the meta objects that represent
      * <ul>
-     * <li>each class,</li>
-     * <li>each feature of each class,</li>
-     * <li>each operation of each class,</li>
-     * <li>each enum,</li>
-     * <li>and each data type</li>
+     *   <li>each class,</li>
+     *   <li>each feature of each class,</li>
+     *   <li>each operation of each class,</li>
+     *   <li>each enum,</li>
+     *   <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     *
      * @generated
      */
     interface Literals {
         /**
-         * The meta object literal for the '{@link featJAR.impl.FeatureModelImpl
-         * <em>Feature Model</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '{@link featJAR.impl.FeatureModelImpl <em>Feature Model</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @see featJAR.impl.FeatureModelImpl
          * @see featJAR.impl.FeatJARPackageImpl#getFeatureModel()
          * @generated
@@ -797,25 +784,25 @@ public interface FeatJARPackage extends EPackage {
         EClass FEATURE_MODEL = eINSTANCE.getFeatureModel();
 
         /**
-         * The meta object literal for the '<em><b>Roots</b></em>' containment reference
-         * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Roots</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EReference FEATURE_MODEL__ROOTS = eINSTANCE.getFeatureModel_Roots();
 
         /**
-         * The meta object literal for the '<em><b>Constraints</b></em>' containment
-         * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Constraints</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EReference FEATURE_MODEL__CONSTRAINTS = eINSTANCE.getFeatureModel_Constraints();
 
         /**
-         * The meta object literal for the '{@link featJAR.impl.IdentifiableImpl
-         * <em>Identifiable</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '{@link featJAR.impl.IdentifiableImpl <em>Identifiable</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @see featJAR.impl.IdentifiableImpl
          * @see featJAR.impl.FeatJARPackageImpl#getIdentifiable()
          * @generated
@@ -823,33 +810,33 @@ public interface FeatJARPackage extends EPackage {
         EClass IDENTIFIABLE = eINSTANCE.getIdentifiable();
 
         /**
-         * The meta object literal for the '<em><b>Id</b></em>' attribute feature. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EAttribute IDENTIFIABLE__ID = eINSTANCE.getIdentifiable_Id();
 
         /**
          * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EAttribute IDENTIFIABLE__NAME = eINSTANCE.getIdentifiable_Name();
 
         /**
-         * The meta object literal for the '<em><b>Attributes</b></em>' containment
-         * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EReference IDENTIFIABLE__ATTRIBUTES = eINSTANCE.getIdentifiable_Attributes();
 
         /**
-         * The meta object literal for the '{@link featJAR.impl.FeatureImpl
-         * <em>Feature</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '{@link featJAR.impl.FeatureImpl <em>Feature</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @see featJAR.impl.FeatureImpl
          * @see featJAR.impl.FeatJARPackageImpl#getFeature()
          * @generated
@@ -857,33 +844,33 @@ public interface FeatJARPackage extends EPackage {
         EClass FEATURE = eINSTANCE.getFeature();
 
         /**
-         * The meta object literal for the '<em><b>Parent</b></em>' container reference
-         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EReference FEATURE__PARENT = eINSTANCE.getFeature_Parent();
 
         /**
-         * The meta object literal for the '<em><b>Group Node List</b></em>' containment
-         * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EReference FEATURE__GROUP_NODE_LIST = eINSTANCE.getFeature_GroupNodeList();
-
-        /**
-         * The meta object literal for the '<em><b>Cardinality</b></em>' containment
-         * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EReference FEATURE__CARDINALITY = eINSTANCE.getFeature_Cardinality();
 
         /**
-         * The meta object literal for the '{@link featJAR.impl.ConstraintImpl
-         * <em>Constraint</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Group Node List</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference FEATURE__GROUP_NODE_LIST = eINSTANCE.getFeature_GroupNodeList();
+
+        /**
+         * The meta object literal for the '{@link featJAR.impl.ConstraintImpl <em>Constraint</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @see featJAR.impl.ConstraintImpl
          * @see featJAR.impl.FeatJARPackageImpl#getConstraint()
          * @generated
@@ -891,9 +878,9 @@ public interface FeatJARPackage extends EPackage {
         EClass CONSTRAINT = eINSTANCE.getConstraint();
 
         /**
-         * The meta object literal for the '{@link featJAR.impl.GroupNodeImpl <em>Group
-         * Node</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '{@link featJAR.impl.GroupNodeImpl <em>Group Node</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @see featJAR.impl.GroupNodeImpl
          * @see featJAR.impl.FeatJARPackageImpl#getGroupNode()
          * @generated
@@ -901,33 +888,33 @@ public interface FeatJARPackage extends EPackage {
         EClass GROUP_NODE = eINSTANCE.getGroupNode();
 
         /**
-         * The meta object literal for the '<em><b>Parent</b></em>' container reference
-         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EReference GROUP_NODE__PARENT = eINSTANCE.getGroupNode_Parent();
 
         /**
-         * The meta object literal for the '<em><b>Feature List</b></em>' containment
-         * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EReference GROUP_NODE__FEATURE_LIST = eINSTANCE.getGroupNode_FeatureList();
-
-        /**
-         * The meta object literal for the '<em><b>Cardinality</b></em>' containment
-         * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EReference GROUP_NODE__CARDINALITY = eINSTANCE.getGroupNode_Cardinality();
 
         /**
-         * The meta object literal for the '{@link featJAR.impl.AttributesImpl
-         * <em>Attributes</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Feature List</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference GROUP_NODE__FEATURE_LIST = eINSTANCE.getGroupNode_FeatureList();
+
+        /**
+         * The meta object literal for the '{@link featJAR.impl.AttributesImpl <em>Attributes</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @see featJAR.impl.AttributesImpl
          * @see featJAR.impl.FeatJARPackageImpl#getAttributes()
          * @generated
@@ -935,25 +922,25 @@ public interface FeatJARPackage extends EPackage {
         EClass ATTRIBUTES = eINSTANCE.getAttributes();
 
         /**
-         * The meta object literal for the '<em><b>Key</b></em>' attribute feature. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EAttribute ATTRIBUTES__KEY = eINSTANCE.getAttributes_Key();
 
         /**
          * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EAttribute ATTRIBUTES__VALUE = eINSTANCE.getAttributes_Value();
 
         /**
-         * The meta object literal for the '{@link featJAR.impl.CardinalityImpl
-         * <em>Cardinality</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '{@link featJAR.impl.CardinalityImpl <em>Cardinality</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @see featJAR.impl.CardinalityImpl
          * @see featJAR.impl.FeatJARPackageImpl#getCardinality()
          * @generated
@@ -961,17 +948,17 @@ public interface FeatJARPackage extends EPackage {
         EClass CARDINALITY = eINSTANCE.getCardinality();
 
         /**
-         * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute
-         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EAttribute CARDINALITY__LOWER_BOUND = eINSTANCE.getCardinality_LowerBound();
 
         /**
-         * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute
-         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
         EAttribute CARDINALITY__UPPER_BOUND = eINSTANCE.getCardinality_UpperBound();

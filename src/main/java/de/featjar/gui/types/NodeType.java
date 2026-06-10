@@ -20,13 +20,14 @@
  */
 package de.featjar.gui.types;
 
+import de.featjar.feature.model.FeatureTree.Group;
 import featJAR.Cardinality;
 
 public enum NodeType {
-    OR_NODE("node-or"),
-    XOR_NODE("node-xor"),
-    AND_NODE("node-and"),
-    CARDINALITY_NODE("node-cardinality");
+    OR_NODE("or"),
+    XOR_NODE("xor"),
+    AND_NODE("and"),
+    CARDINALITY_NODE("cardinality");
 
     private final String value;
 
@@ -38,19 +39,29 @@ public enum NodeType {
         return value;
     }
 
-    public static NodeType of(Cardinality c) {
-        int lower = c.getLowerBound();
-        int upper = c.getUpperBound();
+    public static NodeType of(int lower, int upper) {
         if (lower == 1 && upper == -1) return OR_NODE;
         if (lower == 1 && upper == 1) return XOR_NODE;
         if (lower == 0 && upper == -1) return AND_NODE;
         return CARDINALITY_NODE;
     }
 
-    public static NodeType fromGlspId(String glspId) {
-        for (NodeType t : values()) {
-            if (t.value().equals(glspId)) return t;
+    public static NodeType of(Cardinality c) {
+        int lower = c.getLowerBound();
+        int upper = c.getUpperBound();
+        return of(lower, upper);
+    }
+
+    public static NodeType of(Group group) {
+        int lower = group.getLowerBound();
+        int upper = group.getUpperBound();
+        return of(lower, upper);
+    }
+
+    public static NodeType fromvalue(String val) {
+        for (NodeType type : values()) {
+            if (type.value().equals(val)) return type;
         }
-        throw new IllegalArgumentException("Unknown NodeType: " + glspId);
+        throw new IllegalArgumentException("Unknown NodeType: " + val);
     }
 }

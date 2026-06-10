@@ -30,7 +30,6 @@ import org.eclipse.glsp.graph.builder.impl.GLabelBuilder;
 import org.eclipse.glsp.server.features.popup.PopupModelFactory;
 import org.eclipse.glsp.server.features.popup.RequestPopupModelAction;
 
-
 public class FeaturesPopupModelFactory implements PopupModelFactory {
 
     @Override

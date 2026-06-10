@@ -20,6 +20,7 @@
  */
 package de.featjar.gui.types;
 
+import de.featjar.feature.model.FeatureTree.Group;
 import featJAR.Cardinality;
 
 public enum CardinalityType {
@@ -37,16 +38,28 @@ public enum CardinalityType {
         return value;
     }
 
-    public static CardinalityType of(Cardinality c) {
-        if (c.getLowerBound() == 0 && c.getUpperBound() == 1) return OPTIONAL_FEATURE;
-        if (c.getLowerBound() == 1 && c.getUpperBound() == 1) return MANDATORY_FEATURE;
+    public static CardinalityType of(int lower, int upper) {
+        if (lower == 0 && upper == 1) return OPTIONAL_FEATURE;
+        if (lower == 1 && upper == 1) return MANDATORY_FEATURE;
         return MULTIPLE_FEATURE;
     }
 
-    public static CardinalityType fromGlspId(String glspId) {
-        for (CardinalityType t : values()) {
-            if (t.value().equals(glspId)) return t;
+    public static CardinalityType of(Cardinality c) {
+        int lower = c.getLowerBound();
+        int upper = c.getUpperBound();
+        return of(lower, upper);
+    }
+
+    public static CardinalityType of(Group group) {
+        int lower = group.getLowerBound();
+        int upper = group.getUpperBound();
+        return of(lower, upper);
+    }
+
+    public static CardinalityType fromValue(String val) {
+        for (CardinalityType type : values()) {
+            if (type.value().equals(val)) return type;
         }
-        throw new IllegalArgumentException("Unknown FeatureCardinalityType: " + glspId);
+        throw new IllegalArgumentException("Unknown FeatureCardinalityType: " + val);
     }
 }

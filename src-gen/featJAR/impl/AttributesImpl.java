@@ -30,23 +30,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object
- * '<em><b>Attributes</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Attributes</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link featJAR.impl.AttributesImpl#getKey <em>Key</em>}</li>
- * <li>{@link featJAR.impl.AttributesImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link featJAR.impl.AttributesImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link featJAR.impl.AttributesImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AttributesImpl extends MinimalEObjectImpl.Container implements Attributes {
     /**
-     * The default value of the '{@link #getKey() <em>Key</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getKey()
      * @generated
      * @ordered
@@ -54,9 +55,9 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     protected static final String KEY_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getKey() <em>Key</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getKey()
      * @generated
      * @ordered
@@ -64,9 +65,9 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     protected String key = KEY_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getValue()
      * @generated
      * @ordered
@@ -74,9 +75,9 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     protected static final String VALUE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getValue()
      * @generated
      * @ordered
@@ -84,8 +85,8 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     protected String value = VALUE_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     protected AttributesImpl() {
@@ -93,8 +94,8 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -103,8 +104,54 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getKey() {
+        return key;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setKey(String newKey) {
+        String oldKey = key;
+        key = newKey;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, FeatJARPackage.ATTRIBUTES__KEY, oldKey, key));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setValue(String newValue) {
+        String oldValue = value;
+        value = newValue;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, FeatJARPackage.ATTRIBUTES__VALUE, oldValue, value));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -119,8 +166,8 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -137,8 +184,8 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -155,8 +202,8 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -171,8 +218,8 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -186,51 +233,5 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
         result.append(value);
         result.append(')');
         return result.toString();
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String getKey() {
-        return key;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void setKey(String newKey) {
-        String oldKey = key;
-        key = newKey;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, FeatJARPackage.ATTRIBUTES__KEY, oldKey, key));
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String getValue() {
-        return value;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void setValue(String newValue) {
-        String oldValue = value;
-        value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, FeatJARPackage.ATTRIBUTES__VALUE, oldValue, value));
     }
 } // AttributesImpl

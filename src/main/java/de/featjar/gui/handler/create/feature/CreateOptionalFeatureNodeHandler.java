@@ -20,10 +20,9 @@
  */
 package de.featjar.gui.handler.create.feature;
 
-import de.featjar.gui.handler.AFeatureNodeHandler;
 import de.featjar.gui.types.CardinalityType;
 
-public class CreateOptionalFeatureNodeHandler extends AFeatureNodeHandler {
+public class CreateOptionalFeatureNodeHandler extends ACreateFeatureNodeHandler {
 
     public CreateOptionalFeatureNodeHandler() {
         super(CardinalityType.OPTIONAL_FEATURE.value());

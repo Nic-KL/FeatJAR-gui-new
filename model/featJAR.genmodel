@@ -20,14 +20,14 @@
     </genClasses>
     <genClasses ecoreClass="featJAR.ecore#//Feature">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference featJAR.ecore#//Feature/parent"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference featJAR.ecore#//Feature/groupNodeList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference featJAR.ecore#//Feature/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference featJAR.ecore#//Feature/groupNodeList"/>
     </genClasses>
     <genClasses ecoreClass="featJAR.ecore#//Constraint"/>
     <genClasses ecoreClass="featJAR.ecore#//GroupNode">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference featJAR.ecore#//GroupNode/parent"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference featJAR.ecore#//GroupNode/featureList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference featJAR.ecore#//GroupNode/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference featJAR.ecore#//GroupNode/featureList"/>
     </genClasses>
     <genClasses ecoreClass="featJAR.ecore#//Attributes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featJAR.ecore#//Attributes/key"/>

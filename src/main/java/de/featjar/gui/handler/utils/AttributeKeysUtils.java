@@ -52,13 +52,15 @@ public final class AttributeKeysUtils {
         return attribute;
     }
 
-    public static void setFeatureType(Feature feature, FeatureImplementationTypes featureType) {
-        setAttribute(feature, AttributeKeys.IMPLLEMENTATION, featureType.name());
+    public static void setFeatureImplementationType(Feature feature, FeatureImplementationTypes featureType) {
+        setAttribute(feature, AttributeKeys.IMPLLEMENTATION, featureType.value());
     }
 
     public static FeatureImplementationTypes getFeatureType(Feature feature) {
         Optional<Attributes> a = getAttribute(feature, AttributeKeys.IMPLLEMENTATION);
-        return a.isPresent() ? FeatureImplementationTypes.valueOf(a.get().getValue()) : FeatureImplementationTypes.NONE;
+        return a.isPresent()
+                ? FeatureImplementationTypes.fromValue(a.get().getValue()).orElseThrow()
+                : FeatureImplementationTypes.NONE;
     }
 
     public static void setHidden(Feature feature) {

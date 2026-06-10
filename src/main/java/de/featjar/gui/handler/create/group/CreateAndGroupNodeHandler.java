@@ -20,10 +20,9 @@
  */
 package de.featjar.gui.handler.create.group;
 
-import de.featjar.gui.handler.AGroupNodeHandler;
 import de.featjar.gui.types.NodeType;
 
-public class CreateAndGroupNodeHandler extends AGroupNodeHandler {
+public class CreateAndGroupNodeHandler extends ACreateGroupNodeHandler {
     public CreateAndGroupNodeHandler() {
         super(NodeType.AND_NODE.value());
     }
