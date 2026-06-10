@@ -24,10 +24,10 @@ import de.featjar.feature.model.FeatureTree.Group;
 import featJAR.Cardinality;
 
 public enum NodeType {
-    OR_NODE("or"),
-    XOR_NODE("xor"),
-    AND_NODE("and"),
-    CARDINALITY_NODE("cardinality");
+    OR_NODE("node-or"),
+    XOR_NODE("node-xor"),
+    AND_NODE("node-and"),
+    CARDINALITY_NODE("node-cardinality");
 
     private final String value;
 

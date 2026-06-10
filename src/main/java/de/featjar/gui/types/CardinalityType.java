@@ -25,7 +25,7 @@ import featJAR.Cardinality;
 
 public enum CardinalityType {
     OPTIONAL_FEATURE("feature-optional"),
-    MANDATORY_FEATURE("feature-manatory"),
+    MANDATORY_FEATURE("feature-mandatory"),
     MULTIPLE_FEATURE("feature-multiple");
 
     private final String value;

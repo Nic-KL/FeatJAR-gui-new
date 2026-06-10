@@ -75,6 +75,8 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
     double verticalGap = 100;
     int nodeWidth = 100;
     int nodeHeight = 30;
+    int groupNodeWidth = 40;   
+    int groupNodeHeight = 20;
     GDimension portSize = GraphUtil.dimension(nodeWidth / 3, nodeHeight / 3);
 
     final GPoint currentPosition = GraphUtil.point(0, 0);
@@ -204,7 +206,12 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
                     .id(identifiable.getId() + "_label")
                     .build());
         } else {
-        	nodeBuilder.size(GraphUtil.dimension(nodeWidth, nodeHeight));
+//        	nodeBuilder.size(GraphUtil.dimension(groupNodeWidth, groupNodeHeight));
+            boolean invisible = cssType.equals(NodeType.AND_NODE.value())
+                    || cssType.equals(NodeType.CARDINALITY_NODE.value());
+		   int w = invisible ? 1 : groupNodeWidth;
+		   int h = invisible ? 1 : groupNodeHeight;
+		   nodeBuilder.size(GraphUtil.dimension(w, h));
         }
 
         // Experimentell ports
@@ -268,7 +275,13 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
         // Map computed positions back to the GNodes
         for (TreeNode node : FeatureTreeLayouter.allTreeNodes) {
             GNode gNode = FeatureTreeLayouter.mapTreeNodeToGNode(node, gNodes);
-            gNode.setPosition(GraphUtil.point(node.x, node.y));
+            // Center nodes that are narrower than the default node width
+            double w = gNode.getSize() != null ? gNode.getSize().getWidth() : 0;
+            double offsetX = (w > 0 && w < nodeWidth) ? (nodeWidth - w) / 2.0 : 0;
+            
+            gNode.setPosition(GraphUtil.point(node.x + offsetX, node.y));
+            
+//            gNode.setPosition(GraphUtil.point(node.x, node.y));
 
             // Experimentell ports
             // GPoint portPosition = GraphUtil.point(node.x + nodeWidth / 2 -
