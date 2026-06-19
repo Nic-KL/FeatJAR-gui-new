@@ -21,6 +21,8 @@
 package de.featjar.gui.handler.create.group;
 
 import com.google.inject.Inject;
+
+import de.featjar.base.data.Result;
 import de.featjar.gui.handler.utils.CardinialityUtils;
 import de.featjar.gui.handler.utils.HandlerUtils;
 import de.featjar.gui.types.NodeType;
@@ -103,7 +105,7 @@ public class ACreateGroupNodeHandler extends EMFCreateOperationHandler<CreateNod
                 );
     }
 
-    private Optional<GroupNode> createNode() {
+    private Result<GroupNode> createNode() {
 
         GroupNode gn = FeatJARFactory.eINSTANCE.createGroupNode();
 
@@ -112,8 +114,12 @@ public class ACreateGroupNodeHandler extends EMFCreateOperationHandler<CreateNod
         idGenerator.getOrCreateId(gn); // sets ID if not already set
         gn.setName(getLabel());
 
-        //      NodeType type = NodeType.valueOf(getHandledElementTypeIds().get(0));
-        NodeType type = NodeType.fromvalue(getHandledElementTypeIds().get(0));
+        Result<NodeType> t = NodeType.fromValue(getHandledElementTypeIds().get(0));
+        if(t.isEmpty()) {
+        	return Result.empty(t.getProblems());
+        }
+        
+        NodeType type = t.get();
 
         switch (type) {
             case OR_NODE:
@@ -132,6 +138,6 @@ public class ACreateGroupNodeHandler extends EMFCreateOperationHandler<CreateNod
                 break;
         }
 
-        return Optional.of(gn);
+        return Result.of(gn);
     }
 }

@@ -20,6 +20,7 @@
  */
 package de.featjar.gui.types;
 
+import de.featjar.base.data.Result;
 import de.featjar.feature.model.FeatureTree.Group;
 import featJAR.Cardinality;
 
@@ -58,10 +59,10 @@ public enum NodeType {
         return of(lower, upper);
     }
 
-    public static NodeType fromvalue(String val) {
+    public static Result<NodeType> fromValue(String val) {
         for (NodeType type : values()) {
-            if (type.value().equals(val)) return type;
+            if (type.value().equals(val)) return Result.of(type);
         }
-        throw new IllegalArgumentException("Unknown NodeType: " + val);
+        return Result.empty(new IllegalArgumentException("Unknown NodeType: " + val));
     }
 }

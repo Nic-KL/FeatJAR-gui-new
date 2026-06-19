@@ -21,6 +21,8 @@
 package de.featjar.gui.handler.create.feature;
 
 import com.google.inject.Inject;
+
+import de.featjar.base.data.Result;
 import de.featjar.gui.handler.utils.AttributeKeysUtils;
 import de.featjar.gui.handler.utils.CardinialityUtils;
 import de.featjar.gui.handler.utils.HandlerUtils;
@@ -93,8 +95,9 @@ public abstract class ACreateFeatureNodeHandler extends EMFCreateOperationHandle
                 ? FeatJARPackage.Literals.GROUP_NODE__FEATURE_LIST
                 : FeatJARPackage.Literals.FEATURE_MODEL__ROOTS;
         // Create the new feature instance
-        FeatureImplementationTypes TODO = FeatureImplementationTypes.ABSTRACT;
-        Feature newFeature = createFeature(getLabel(), TODO).orElseThrow();
+        // TODO Default value is Abstract
+        FeatureImplementationTypes defaultImplType = FeatureImplementationTypes.ABSTRACT;
+        Feature newFeature = createFeature(getLabel(), defaultImplType).orElseThrow();
 
         System.err.println("Created Feature: " + newFeature.getName());
         System.err.println(" Where to add: " + eParent.getClass() + " Containment Reference: " + reference.getClass()
@@ -108,7 +111,7 @@ public abstract class ACreateFeatureNodeHandler extends EMFCreateOperationHandle
                 );
     }
 
-    private Optional<Feature> createFeature(final String label, FeatureImplementationTypes featureType) {
+    private Result<Feature> createFeature(final String label, FeatureImplementationTypes featureType) {
         Feature newFeature = FeatJARFactory.eINSTANCE.createFeature();
 
         AttributeKeysUtils.setFeatureImplementationType(newFeature, featureType);
@@ -117,10 +120,13 @@ public abstract class ACreateFeatureNodeHandler extends EMFCreateOperationHandle
         newFeature.setName(label + "-" + featureCounter++);
 
         HandlerUtils.debugPrint(idGenerator, newFeature);
-
-        //      FeatureCardinalityType type = FeatureCardinalityType.valueOf(getHandledElementTypeIds().get(0));
-        CardinalityType type =
-                CardinalityType.fromValue(getHandledElementTypeIds().get(0));
+        
+        Result<CardinalityType> t = CardinalityType.fromValue(getHandledElementTypeIds().get(0));
+        if(t.isEmpty()) {
+        	return Result.empty(t.getProblems());
+        }
+        
+        CardinalityType type = t.get();
 
         switch (type) {
             case MANDATORY_FEATURE:
@@ -129,12 +135,12 @@ public abstract class ACreateFeatureNodeHandler extends EMFCreateOperationHandle
             case OPTIONAL_FEATURE:
                 newFeature.setCardinality(CardinialityUtils.createCardinality(0, 1));
                 break;
-            case MULTIPLE_FEATURE: // TODO dummy vars change !
+            case MULTIPLE_FEATURE: // TODO dummy values change !
                 newFeature.setCardinality(CardinialityUtils.createCardinality(13, 37));
                 break;
             default:
                 break;
         }
-        return Optional.of(newFeature);
+        return Result.of(newFeature);
     }
 }

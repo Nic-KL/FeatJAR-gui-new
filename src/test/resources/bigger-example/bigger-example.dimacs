@@ -1,0 +1,61 @@
+c 1 Core
+c 2 Root
+c 3 Logging
+c 4 InternalConfig
+c 5 UI
+c 6 Storage
+c 7 Plugins
+c 8 Worker
+c 9 CLI
+c 10 GUI
+c 11 FileSystem
+c 12 Database
+c 13 Cloud
+c 14 AuthPlugin
+c 15 ExportPlugin
+c 16 MonitoringPlugin
+c 17 BackupPlugin
+c 18 W1
+c 19 W2
+c 20 W3
+c 21 W4
+c 22 W5
+p cnf 22 38
+-1 2 0
+-2 1 0
+-3 2 0
+-4 2 0
+-5 2 0
+-6 2 0
+-7 2 0
+-8 2 0
+-9 5 0
+-10 5 0
+-5 -10 -9 0
+-5 10 9 0
+-11 6 0
+-12 6 0
+-13 6 0
+-6 11 12 13 0
+-14 7 0
+-15 7 0
+-16 7 0
+-17 7 0
+-7 17 16 0
+-7 17 15 0
+-7 16 15 0
+-7 17 14 0
+-7 16 14 0
+-7 15 14 0
+-18 8 0
+-19 8 0
+-20 8 0
+-21 8 0
+-22 8 0
+-8 22 21 20 19 0
+-8 22 21 20 18 0
+-8 22 21 19 18 0
+-8 22 20 19 18 0
+-8 21 20 19 18 0
+-10 3 0
+-12 1 0

@@ -20,7 +20,7 @@
  */
 package de.featjar.gui.types;
 
-import java.util.Optional;
+import de.featjar.base.data.Result;
 
 public enum FeatureImplementationTypes {
     NONE("none"),
@@ -33,12 +33,11 @@ public enum FeatureImplementationTypes {
         this.value = value;
     }
 
-    public static Optional<FeatureImplementationTypes> fromValue(String val) {
+    public static Result<FeatureImplementationTypes> fromValue(String val) {
         for (FeatureImplementationTypes fit : values()) {
-            if (fit.value().equals(val)) return Optional.of(fit);
+            if (fit.value().equals(val)) return Result.of(fit);
         }
-        return Optional.empty();
-        // throw new IllegalArgumentException("Unknown FeatureImplementationTypes: " + val);
+        return Result.empty(new IllegalArgumentException("Unknown FeatureImplementationTypes: " + val));
     }
 
     public String value() {

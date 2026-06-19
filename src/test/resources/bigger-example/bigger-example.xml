@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<struct>
+		<and abstract="true" name="Root">
+			<feature mandatory="true" name="Core"/>
+			<feature name="Logging"/>
+			<feature hidden="true" name="InternalConfig"/>
+			<and name="UI">
+				<feature name="CLI"/>
+				<feature name="GUI"/>
+			</and>
+			<and name="Storage">
+				<feature name="FileSystem"/>
+				<feature name="Database"/>
+				<feature name="Cloud"/>
+			</and>
+			<and name="Plugins">
+				<feature name="AuthPlugin"/>
+				<feature name="ExportPlugin"/>
+				<feature name="MonitoringPlugin"/>
+				<feature name="BackupPlugin"/>
+			</and>
+			<and name="Worker">
+				<feature name="W1"/>
+				<feature name="W2"/>
+				<feature name="W3"/>
+				<feature name="W4"/>
+				<feature name="W5"/>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>GUI</var>
+				<var>Logging</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Database</var>
+				<var>Core</var>
+			</imp>
+		</rule>
+		<rule/>
+	</constraints>
+</featureModel>

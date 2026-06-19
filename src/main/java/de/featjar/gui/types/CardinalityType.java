@@ -20,6 +20,7 @@
  */
 package de.featjar.gui.types;
 
+import de.featjar.base.data.Result;
 import de.featjar.feature.model.FeatureTree.Group;
 import featJAR.Cardinality;
 
@@ -56,10 +57,10 @@ public enum CardinalityType {
         return of(lower, upper);
     }
 
-    public static CardinalityType fromValue(String val) {
+    public static Result<CardinalityType> fromValue(String val) {
         for (CardinalityType type : values()) {
-            if (type.value().equals(val)) return type;
+            if (type.value().equals(val)) return Result.of(type);
         }
-        throw new IllegalArgumentException("Unknown FeatureCardinalityType: " + val);
+        return Result.empty(new IllegalArgumentException("Unknown FeatureCardinalityType: " + val));
     }
 }
