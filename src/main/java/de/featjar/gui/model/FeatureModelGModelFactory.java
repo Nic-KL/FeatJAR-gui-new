@@ -61,7 +61,7 @@ import org.eclipse.glsp.server.emf.notation.EMFNotationGModelFactory;
 public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
 
     // All graphical elements (GModel Elements)
-    public static Map<String, String> featureIdMap = new HashMap<>();
+    public static Map<String, String> featureGroupIdMap = new HashMap<>();
     public static List<Feature> emfFeatures = new ArrayList<>();
     public static List<GroupNode> emfGroupNodes = new ArrayList<>();
     public static Map<String, String> constraintIdMap = new HashMap<>();
@@ -80,18 +80,23 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
     GDimension portSize = GraphUtil.dimension(nodeWidth / 3, nodeHeight / 3);
 
     final GPoint currentPosition = GraphUtil.point(0, 0);
-
+// TODO add to featureGroupIDMap also constraints
     protected void clearAllGraphicalElements() {
         FeatureTreeLayouter.clear();
         gElements.clear();
         gNodes.clear();
         gExpressions.clear();
-        featureIdMap.clear();
+        featureGroupIdMap.clear();
         emfFeatures.clear();
         emfGroupNodes.clear();
         emfConstraints.clear();
         constraintIdMap.clear();
     }
+    
+//    public String resolveId(String gModelId) {
+//    	String id = featureGroupIdMap.get(gModelId);
+//    	return id == null ? constraintIdMap(gModelId) : id;
+//    }
 
     @Override
     protected void fillRootElement(final EObject semanticModel, final Diagram notationModel, final GModelRoot newRoot) {
@@ -146,7 +151,7 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
 
     private void registerFeature(GNode gNode, Feature feature) {
         gNodes.add(gNode);
-        featureIdMap.put(gNode.getId(), feature.getId());
+        featureGroupIdMap.put(gNode.getId(), feature.getId());
         emfFeatures.add(feature);
     }
 
@@ -175,7 +180,7 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
 
     private void registerGroupNode(GroupNode groupNode, GNode gNode) {
         gNodes.add(gNode);
-        featureIdMap.put(gNode.getId(), groupNode.getId());
+        featureGroupIdMap.put(gNode.getId(), groupNode.getId());
         emfGroupNodes.add(groupNode);
     }
 

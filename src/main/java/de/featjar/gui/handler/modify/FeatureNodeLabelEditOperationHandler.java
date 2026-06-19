@@ -62,7 +62,7 @@ public class FeatureNodeLabelEditOperationHandler extends EMFOperationHandler<Fe
                     .orElseThrow(NoSuchElementException::new);
             element.setName(operation.newText);
         } else {
-            Feature element = HandlerUtils.findFeatureById(FeatureModelGModelFactory.featureIdMap.get(
+            Feature element = HandlerUtils.findFeatureById(FeatureModelGModelFactory.featureGroupIdMap.get(
                             foundLabel.getParent().getId()))
                     .orElseThrow(NoSuchElementException::new);
             element.setName(operation.newText);

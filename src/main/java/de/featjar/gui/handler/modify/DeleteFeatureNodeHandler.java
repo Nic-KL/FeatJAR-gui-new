@@ -24,6 +24,8 @@ import com.google.inject.Inject;
 import de.featjar.gui.handler.utils.HandlerUtils;
 import de.featjar.gui.model.FeatureModelGModelFactory;
 import featJAR.Feature;
+import featJAR.Identifiable;
+
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -56,7 +58,7 @@ public class DeleteFeatureNodeHandler extends EMFOperationHandler<DeleteOperatio
 
     protected Command delete(final String gModelId) {
 
-        Feature element = HandlerUtils.findFeatureById(FeatureModelGModelFactory.featureIdMap.get(gModelId))
+        Identifiable element = HandlerUtils.findIdentifiableById(FeatureModelGModelFactory.featureGroupIdMap.get(gModelId))
                 .orElseThrow(() -> new NoSuchElementException(gModelId));
 
         EditingDomain editingDomain = modelState.getEditingDomain();

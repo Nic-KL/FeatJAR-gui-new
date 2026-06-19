@@ -59,14 +59,12 @@ public class Gui {
                 Result<String> path = parseArgs(args, "-path");
                 Result<String> portNumber = parseArgs(args, "-p");
                 String originalFileName = null;
-                String originalFileExtension = null;
                 IFeatureModel fm = null;
                 IFormat<IFeatureModel> format = null;
 
                 if (path.isPresent()) {
                     String p = path.get();
                     originalFileName = Path.of(p).getFileName().toString();
-                    originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf('.') + 1);
 
                     fm = IO.load(Path.of(p), FeatureModelFormats.getInstance()).orElseThrow();
                     format = FeatureModelFormats.getInstance().getFormatList(Path.of(p)).stream()
@@ -98,7 +96,7 @@ public class Gui {
                             FeatJAR.log().message("Saving to %s", cwd);
                             fm = IO.load(CLIENT_ABSOLUTE_EMF_FILE_PATH, new EMFFeatureModelFormat())
                                     .orElseThrow();
-                            IO.save(fm, Path.of(cwd, originalFileName + originalFileExtension), format);
+                            IO.save(fm, Path.of(cwd, originalFileName), format);
 
                             System.exit(0);
                         }
@@ -114,7 +112,8 @@ public class Gui {
         for (int i = 0; i < cmdArgs.length; i++) {
             if (flag.equals(cmdArgs[i])) {
                 if (i + 1 >= cmdArgs.length) {
-                    return Result.empty(addProblem(Severity.ERROR, "Missing value after argument ", flag));
+                    return Result.empty(new IllegalArgumentException("Missing value after " + flag));
+                    // addProblem(Severity.ERROR, "Missing value after argument ", flag)
                     //                     throw new IllegalArgumentException("Missing value after " + flag);
                 }
                 return Result.of(cmdArgs[i + 1]);

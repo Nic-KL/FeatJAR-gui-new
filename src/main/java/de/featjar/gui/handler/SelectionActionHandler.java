@@ -61,7 +61,7 @@ public class SelectionActionHandler implements ActionHandler {
         if (selectedIds.size() > 0) {
             // TODO DOES NOT WORK !
             Identifiable element = HandlerUtils.findIdentifiableById(
-                            FeatureModelGModelFactory.featureIdMap.get(selectedIds.get(0)))
+                            FeatureModelGModelFactory.featureGroupIdMap.get(selectedIds.get(0)))
                     .orElseThrow(NoSuchElementException::new);
             modelState.setProperty("currentSelection", element);
         }

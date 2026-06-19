@@ -24,6 +24,9 @@ import featJAR.Cardinality;
 import featJAR.FeatJARFactory;
 
 public final class CardinialityUtils {
+	
+	public static final int OPEN = -1;
+	
     public static Cardinality createCardinality(int lowerBound, int upperBound) {
         Cardinality cardinality = FeatJARFactory.eINSTANCE.createCardinality();
         cardinality.setLowerBound(lowerBound);
@@ -38,7 +41,7 @@ public final class CardinialityUtils {
     }
 
     public static Cardinality createOrCardinality() {
-        return CardinialityUtils.createCardinality(1, -1);
+        return CardinialityUtils.createCardinality(1, OPEN);
     }
 
     public static Cardinality createXorCardinality() {
@@ -62,11 +65,11 @@ public final class CardinialityUtils {
     // GROUPS
 
     public static boolean isAnd(Cardinality c) {
-        return c.getLowerBound() == 0 && c.getUpperBound() == -1;
+        return c.getLowerBound() == 0 && c.getUpperBound() == OPEN;
     }
 
     public static boolean isOr(Cardinality c) {
-        return c.getLowerBound() == 1 && c.getUpperBound() == -1;
+        return c.getLowerBound() == 1 && c.getUpperBound() == OPEN;
     }
 
     public static boolean isXor(Cardinality c) {

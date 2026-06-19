@@ -86,7 +86,7 @@ public class EMFFeatureModelParser extends AXMLParser<IFeatureModel> {
             switch (child.getNodeName()) {
                 case EMFFeatureModelFormat.ATTRIBUTES -> parseFeratureAttributes(child, feature);
                 case EMFFeatureModelFormat.CARDINALITY -> {
-                    Cardinality card = parseCardinality(child);
+                    Cardinality card = parseCardinality(child, false);
                     if (isOptional(card)) tree.mutate().makeOptional();
                     if (isMandatory(card)) tree.mutate().makeMandatory();
                     // TODO Multiple is default ????
@@ -109,24 +109,33 @@ public class EMFFeatureModelParser extends AXMLParser<IFeatureModel> {
                 feature.mutate().setAbstract(true);
             if (FeatureImplementationTypes.CONCRETE.value().equals(value))
                 feature.mutate().setAbstract(false);
-            // TODO If type "NONE" is present -> nothing will be set !
+            // TODO If type "NONE" is present -> nothing should be set !
         }
 
         if (AttributeKeys.HIDDEN.equals(key)) {
             feature.mutate().setHidden(true);
         }
     }
-
-    private Cardinality parseCardinality(Element e) {
-        int lower = e.getAttribute(EMFFeatureModelFormat.LOWER_BOUND).isEmpty()
-                ? 0
-                : Integer.parseInt(e.getAttribute(EMFFeatureModelFormat.LOWER_BOUND));
-        int upper = e.getAttribute(EMFFeatureModelFormat.UPPER_BOUND).isEmpty()
-                ? 0
-                : Integer.parseInt(e.getAttribute(EMFFeatureModelFormat.UPPER_BOUND));
-
+    
+    private Cardinality parseCardinality(Element e, boolean isGroup) {    	
+    	int lower = e.getAttribute(EMFFeatureModelFormat.LOWER_BOUND).isEmpty()
+				? 0
+				: Integer.parseInt(e.getAttribute(EMFFeatureModelFormat.LOWER_BOUND));
+    	int upper;
+    	
+    	if(isGroup)  {
+    		upper = e.getAttribute(EMFFeatureModelFormat.UPPER_BOUND).isEmpty()
+    				? OPEN
+					: Integer.parseInt(e.getAttribute(EMFFeatureModelFormat.UPPER_BOUND));
+    	} else {
+            upper = e.getAttribute(EMFFeatureModelFormat.UPPER_BOUND).isEmpty()
+                    ? 1
+                    : Integer.parseInt(e.getAttribute(EMFFeatureModelFormat.UPPER_BOUND));
+    	}
+    	
         return createCardinality(lower, upper);
     }
+    
 
     private void parseGroupNode(Element groupNode, IFeatureTree parentTree) throws ParseException {
         Cardinality cardinality = null;
@@ -135,7 +144,7 @@ public class EMFFeatureModelParser extends AXMLParser<IFeatureModel> {
 
         for (Element child : getElements(groupNode.getChildNodes())) {
             switch (child.getNodeName()) {
-                case EMFFeatureModelFormat.CARDINALITY -> cardinality = parseCardinality(child);
+                case EMFFeatureModelFormat.CARDINALITY -> cardinality = parseCardinality(child, true);
                 case EMFFeatureModelFormat.FEATURE_LIST -> childFeatures.add(child);
                 default -> {}
             }
