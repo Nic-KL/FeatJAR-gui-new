@@ -3,17 +3,6 @@ plugins {
     id 'de.featjar.java-application'
 }
 
-def isGui = true
-def mainClassVar = isGui ? 'de.featjar.gui.Gui' : 'de.featjar.gui.launch.FeatureModelServerLauncher'
-
-group = 'de.featjar.gui'
-description = 'FeatJar-Gui-Server'
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 dependencies {
     api 'de.featjar:feature-model'
     api 'de.featjar:uvl'
@@ -34,13 +23,6 @@ dependencies {
     implementation('org.eclipse.elk:org.eclipse.elk.alg.layered:0.8.1') {
         exclude group: 'log4j', module: 'log4j'
     }
-    
-}
-
-license {
-    ext {
-        licence_url = 'https://github.com/FeatureIDE'
-    }
 }
 
 sourceSets {
@@ -51,35 +33,8 @@ sourceSets {
     }
 }
 
-application {
-    mainClass = mainClassVar
-}
-
-tasks.named('jar') {
-    manifest {
-        attributes(
-            'Main-Class': mainClassVar
-        )
+license {
+    ext {
+        licence_url = 'https://github.com/FeatureIDE'
     }
-}
-
-tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
-    dependsOn tasks.named('classes')
-    archiveClassifier.set('all')
-    from(sourceSets.main.output)
-    configurations = [project.configurations.runtimeClasspath]
-
-    manifest {
-        attributes(
-            'Main-Class': mainClassVar,
-            'Multi-Release': 'true'
-        )
-    }
-
-    append('plugin.properties')
-    mergeServiceFiles()
-}
-
-tasks.named('build') {
-    dependsOn tasks.named('shadowJar')
 }

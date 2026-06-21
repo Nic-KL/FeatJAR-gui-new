@@ -20,14 +20,25 @@
  */
 package de.featjar.gui.launch;
 
-import de.featjar.gui.policy.FeatureModelGLSPServer;
 import org.eclipse.glsp.server.di.ServerModule;
-import org.eclipse.glsp.server.protocol.GLSPServer;
+import org.eclipse.glsp.server.launch.GLSPServerLauncher;
+import org.eclipse.glsp.server.launch.SocketGLSPServerLauncher;
 
-public class FeatureModelServerModule extends ServerModule {
+public final class FeatureModelGLSPLauncher extends AFeatureModelServerLauncher {
+
+    private FeatureModelGLSPLauncher() {}
+
+    public static void main(String[] args) throws Exception {
+        new FeatureModelGLSPLauncher().start(args);
+    }
 
     @Override
-    protected Class<? extends GLSPServer> bindGLSPServer() {
-        return FeatureModelGLSPServer.class;
+    protected String getProcessName() {
+        return "FeatureModelGlspServer";
+    }
+
+    @Override
+    protected GLSPServerLauncher createLauncher(ServerModule serverModule) {
+        return new SocketGLSPServerLauncher(serverModule);
     }
 }
