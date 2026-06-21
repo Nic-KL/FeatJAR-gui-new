@@ -75,12 +75,12 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
     double verticalGap = 100;
     int nodeWidth = 100;
     int nodeHeight = 30;
-    int groupNodeWidth = 40;   
+    int groupNodeWidth = 40;
     int groupNodeHeight = 20;
     GDimension portSize = GraphUtil.dimension(nodeWidth / 3, nodeHeight / 3);
 
     final GPoint currentPosition = GraphUtil.point(0, 0);
-// TODO add to featureGroupIDMap also constraints
+    // TODO add to featureGroupIDMap also constraints
     protected void clearAllGraphicalElements() {
         FeatureTreeLayouter.clear();
         gElements.clear();
@@ -92,11 +92,11 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
         emfConstraints.clear();
         constraintIdMap.clear();
     }
-    
-//    public String resolveId(String gModelId) {
-//    	String id = featureGroupIdMap.get(gModelId);
-//    	return id == null ? constraintIdMap(gModelId) : id;
-//    }
+
+    //    public String resolveId(String gModelId) {
+    //    	String id = featureGroupIdMap.get(gModelId);
+    //    	return id == null ? constraintIdMap(gModelId) : id;
+    //    }
 
     @Override
     protected void fillRootElement(final EObject semanticModel, final Diagram notationModel, final GModelRoot newRoot) {
@@ -211,12 +211,12 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
                     .id(identifiable.getId() + "_label")
                     .build());
         } else {
-//        	nodeBuilder.size(GraphUtil.dimension(groupNodeWidth, groupNodeHeight));
-            boolean invisible = cssType.equals(NodeType.AND_NODE.value())
-                    || cssType.equals(NodeType.CARDINALITY_NODE.value());
-		   int w = invisible ? 1 : groupNodeWidth;
-		   int h = invisible ? 1 : groupNodeHeight;
-		   nodeBuilder.size(GraphUtil.dimension(w, h));
+            //        	nodeBuilder.size(GraphUtil.dimension(groupNodeWidth, groupNodeHeight));
+            boolean invisible =
+                    cssType.equals(NodeType.AND_NODE.value()) || cssType.equals(NodeType.CARDINALITY_NODE.value());
+            int w = invisible ? 1 : groupNodeWidth;
+            int h = invisible ? 1 : groupNodeHeight;
+            nodeBuilder.size(GraphUtil.dimension(w, h));
         }
 
         // Experimentell ports
@@ -283,10 +283,10 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
             // Center nodes that are narrower than the default node width
             double w = gNode.getSize() != null ? gNode.getSize().getWidth() : 0;
             double offsetX = (w > 0 && w < nodeWidth) ? (nodeWidth - w) / 2.0 : 0;
-            
+
             gNode.setPosition(GraphUtil.point(node.x + offsetX, node.y));
-            
-//            gNode.setPosition(GraphUtil.point(node.x, node.y));
+
+            //            gNode.setPosition(GraphUtil.point(node.x, node.y));
 
             // Experimentell ports
             // GPoint portPosition = GraphUtil.point(node.x + nodeWidth / 2 -

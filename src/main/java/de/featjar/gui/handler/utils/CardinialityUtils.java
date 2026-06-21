@@ -24,9 +24,9 @@ import featJAR.Cardinality;
 import featJAR.FeatJARFactory;
 
 public final class CardinialityUtils {
-	
-	public static final int OPEN = -1;
-	
+
+    public static final int OPEN = -1;
+
     public static Cardinality createCardinality(int lowerBound, int upperBound) {
         Cardinality cardinality = FeatJARFactory.eINSTANCE.createCardinality();
         cardinality.setLowerBound(lowerBound);

@@ -53,38 +53,21 @@ public class FeatureModelDiagramModule extends EMFNotationDiagramModule {
 
     @Override
     protected Class<? extends DiagramConfiguration> bindDiagramConfiguration() {
-        // define what operations are allowed with our elements
         return FeatureModelDiagramConfiguration.class;
     }
 
-    // Experimentell
-    // @Override
-    // protected Class<? extends PopupModelFactory> bindPopupModelFactory() {
-    // return FeaturesPopupModelFactory.class;
-    // }
-
     @Override
     protected Class<? extends EMFSourceModelStorage> bindSourceModelStorage() {
-        // ensure our custom package is registered when loading our models
         return FeatureModelSourceModelStorage.class;
     }
 
     @Override
     public Class<? extends GModelFactory> bindGModelFactory() {
-        // custom factory to convert tasks into nodes
         return FeatureModelGModelFactory.class;
     }
 
-    // WRONG we need a custom generator which sets IDs when there is no ID present !
-    // @Override
-    // protected Class<? extends EMFIdGenerator> bindEMFIdGenerator() {
-    // // all our elements inherit from Identifiable and have an ID attribute set
-    // return AttributeIdGenerator.class;
-    // }
-
     @Override
     protected Class<? extends EMFIdGenerator> bindEMFIdGenerator() {
-        // all our elements inherit from Identifiable and have an ID attribute set
         return FeatureModelIdGenerator.class;
     }
 

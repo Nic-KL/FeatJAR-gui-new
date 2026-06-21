@@ -21,7 +21,6 @@
 package de.featjar.gui.handler.create.group;
 
 import com.google.inject.Inject;
-
 import de.featjar.base.data.Result;
 import de.featjar.gui.handler.utils.CardinialityUtils;
 import de.featjar.gui.handler.utils.HandlerUtils;
@@ -115,10 +114,10 @@ public class ACreateGroupNodeHandler extends EMFCreateOperationHandler<CreateNod
         gn.setName(getLabel());
 
         Result<NodeType> t = NodeType.fromValue(getHandledElementTypeIds().get(0));
-        if(t.isEmpty()) {
-        	return Result.empty(t.getProblems());
+        if (t.isEmpty()) {
+            return Result.empty(t.getProblems());
         }
-        
+
         NodeType type = t.get();
 
         switch (type) {

@@ -21,7 +21,6 @@
 package de.featjar.gui.handler.create.feature;
 
 import com.google.inject.Inject;
-
 import de.featjar.base.data.Result;
 import de.featjar.gui.handler.utils.AttributeKeysUtils;
 import de.featjar.gui.handler.utils.CardinialityUtils;
@@ -120,12 +119,13 @@ public abstract class ACreateFeatureNodeHandler extends EMFCreateOperationHandle
         newFeature.setName(label + "-" + featureCounter++);
 
         HandlerUtils.debugPrint(idGenerator, newFeature);
-        
-        Result<CardinalityType> t = CardinalityType.fromValue(getHandledElementTypeIds().get(0));
-        if(t.isEmpty()) {
-        	return Result.empty(t.getProblems());
+
+        Result<CardinalityType> t =
+                CardinalityType.fromValue(getHandledElementTypeIds().get(0));
+        if (t.isEmpty()) {
+            return Result.empty(t.getProblems());
         }
-        
+
         CardinalityType type = t.get();
 
         switch (type) {
