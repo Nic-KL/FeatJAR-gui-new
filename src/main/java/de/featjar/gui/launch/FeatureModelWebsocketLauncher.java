@@ -41,7 +41,7 @@ public final class FeatureModelWebsocketLauncher {
     private static final int MAX_LOG_FILE_SIZE = 1024 * 50; // 50 KiB
     private static final Path LOG_FILE_PATH = Path.of("server_logs.log");
 
-    protected void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         createLogFile();
         System.setOut(new PrintStream(LOG_FILE_PATH.toFile()));
 
