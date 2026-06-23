@@ -33,7 +33,9 @@ import org.eclipse.glsp.server.websocket.WebsocketServerLauncher;
 
 public final class FeatureModelWebsocketLauncher {
 
-    private static final int DEFAULT_PORT = 8081;
+    public static final String SIGNAL_START = "server_start";
+
+    public static final int DEFAULT_PORT = 8081;
 
     private static final String PROCESS_NAME = "FeatureModelGlspServer";
     private static final String ENDPOINT_PATH = "/featuremodel";
@@ -43,6 +45,7 @@ public final class FeatureModelWebsocketLauncher {
 
     public static void main(String[] args) throws Exception {
         createLogFile();
+        PrintStream out = System.out;
         System.setOut(new PrintStream(LOG_FILE_PATH.toFile()));
 
         DefaultCLIParser parser = new DefaultCLIParser(args, PROCESS_NAME);
@@ -54,7 +57,9 @@ public final class FeatureModelWebsocketLauncher {
                 new ServerModule().configureDiagramModule(new FeatureModelDiagramModule());
 
         ElkLayoutEngine.initialize(new LayeredMetaDataProvider());
-        new WebsocketServerLauncher(configureDiagramModule, ENDPOINT_PATH).start(hostname, port, parser);
+        WebsocketServerLauncher launcher = new WebsocketServerLauncher(configureDiagramModule, ENDPOINT_PATH);
+        out.println(SIGNAL_START);
+        launcher.start(hostname, port, parser);
     }
 
     private static void createLogFile() throws IOException {

@@ -35,7 +35,11 @@ import de.featjar.feature.model.IFeatureModel;
 import de.featjar.feature.model.io.FeatureModelFormats;
 import de.featjar.feature.model.io.xml.XMLFeatureModelFormat;
 import de.featjar.gui.io.EMFFeatureModelFormat;
+import de.featjar.gui.launch.FeatureModelWebsocketLauncher;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -84,8 +88,15 @@ public class FeatureModelGuiCommand extends ACommand {
         Process server;
         try {
             IO.save(fromInput.get(), CLIENT_ABSOLUTE_EMF_FILE_PATH, new EMFFeatureModelFormat());
+
+            FeatJAR.log().info("Server is starting...");
             server = launchServer(optionList);
-            FeatJAR.log().info("Server is runnig");
+            waitForSignal(server, FeatureModelWebsocketLauncher.SIGNAL_START);
+            if (!server.isAlive()) {
+                return FeatJAR.ERROR_COMPUTING_RESULT;
+            }
+            FeatJAR.log().info("Server is runnig and listens on port " + optionList.get(PORT_OPTION));
+
             openBrowser();
         } catch (IOException e) {
             FeatJAR.log().error(e);
@@ -136,10 +147,29 @@ public class FeatureModelGuiCommand extends ACommand {
 
         ProcessBuilder pb = new ProcessBuilder(command);
 
-        pb.redirectOutput(ProcessBuilder.Redirect.DISCARD);
         pb.redirectError(ProcessBuilder.Redirect.INHERIT);
 
         return pb.start();
     }
 
+    private static void waitForSignal(final Process process, final String signal) {
+        Thread listeningThread = new Thread(() -> {
+            try (BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8))) {
+                for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+                    if (signal.equals(line)) {
+                        return;
+                    }
+                }
+            } catch (final IOException e) {
+                FeatJAR.log().error(e);
+            }
+        });
+        listeningThread.start();
+        try {
+            listeningThread.join();
+        } catch (InterruptedException e) {
+            FeatJAR.log().error(e);
+        }
+    }
 }
