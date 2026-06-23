@@ -67,6 +67,9 @@ public class FeatureModelGuiCommand extends ACommand {
     private static final Path CLIENT_HTML_PATH = CLIENT_PATH.resolve("diagram.html");
     private static final Path CLIENT_ABSOLUTE_EMF_FILE_PATH = CLIENT_PATH.resolve("gui_model.featuremodel");
 
+    private boolean serverStarted;
+    private boolean serverStopped;
+
     @Override
     public Optional<String> getDescription() {
         return Optional.of("Opens a GUI for feature modeling.");
@@ -91,7 +94,9 @@ public class FeatureModelGuiCommand extends ACommand {
 
             FeatJAR.log().info("Server is starting...");
             server = launchServer(optionList);
-            waitForSignal(server, FeatureModelWebsocketLauncher.SIGNAL_START);
+
+            waitForStartSignal();
+
             if (!server.isAlive()) {
                 return FeatJAR.ERROR_COMPUTING_RESULT;
             }
@@ -103,18 +108,64 @@ public class FeatureModelGuiCommand extends ACommand {
             return FeatJAR.ERROR_COMPUTING_RESULT;
         }
 
+        Thread listenForUserThread = new Thread(() -> {
+            try {
+                System.in.read();
+            } catch (IOException e) {
+            }
+            processServerSignals(FeatureModelWebsocketLauncher.SIGNAL_STOP);
+        });
+        listenForUserThread.start();
+
+        waitForStopSignal();
+
         try {
-            System.in.read();
             return writeResult(
                     optionList,
                     IO.load(CLIENT_ABSOLUTE_EMF_FILE_PATH, new EMFFeatureModelFormat()),
                     optionList.get(OUTPUT_FORMAT));
-        } catch (IOException e) {
-            FeatJAR.log().error(e);
-            return FeatJAR.ERROR_WRITING_RESULT;
         } finally {
             FeatJAR.log().info("Server is shutting down.....");
             server.destroy();
+        }
+    }
+
+    private synchronized boolean processServerSignals(String signal) {
+        switch (signal) {
+            case FeatureModelWebsocketLauncher.SIGNAL_STOP:
+                serverStarted = true;
+                serverStopped = true;
+                notifyAll();
+                return true;
+            case FeatureModelWebsocketLauncher.SIGNAL_START:
+                serverStarted = true;
+                notifyAll();
+                return false;
+            default:
+                notifyAll();
+                return false;
+        }
+    }
+
+    private synchronized void waitForStartSignal() {
+        while (!serverStarted) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                FeatJAR.log().error(e);
+            }
+        }
+    }
+
+    private synchronized void waitForStopSignal() {
+        while (!serverStopped) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                FeatJAR.log().error(e);
+            }
         }
     }
 
@@ -138,7 +189,7 @@ public class FeatureModelGuiCommand extends ACommand {
         }
     }
 
-    private static Process launchServer(OptionList optionList) throws IOException {
+    private Process launchServer(OptionList optionList) throws IOException {
         List<String> command = new ArrayList<>(4);
         command.add("./gradlew");
         command.add("runServer");
@@ -147,29 +198,26 @@ public class FeatureModelGuiCommand extends ACommand {
 
         ProcessBuilder pb = new ProcessBuilder(command);
 
-        pb.redirectError(ProcessBuilder.Redirect.INHERIT);
+        pb.redirectError(ProcessBuilder.Redirect.DISCARD);
 
-        return pb.start();
-    }
+        final Process server = pb.start();
 
-    private static void waitForSignal(final Process process, final String signal) {
         Thread listeningThread = new Thread(() -> {
             try (BufferedReader reader =
-                    new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8))) {
+                    new BufferedReader(new InputStreamReader(server.getInputStream(), StandardCharsets.UTF_8))) {
                 for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-                    if (signal.equals(line)) {
+                    if (processServerSignals(line)) {
                         return;
                     }
                 }
             } catch (final IOException e) {
                 FeatJAR.log().error(e);
+            } finally {
+                processServerSignals(FeatureModelWebsocketLauncher.SIGNAL_STOP);
             }
         });
         listeningThread.start();
-        try {
-            listeningThread.join();
-        } catch (InterruptedException e) {
-            FeatJAR.log().error(e);
-        }
+
+        return server;
     }
 }

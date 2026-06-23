@@ -34,6 +34,7 @@ import org.eclipse.glsp.server.websocket.WebsocketServerLauncher;
 public final class FeatureModelWebsocketLauncher {
 
     public static final String SIGNAL_START = "server_start";
+    public static final String SIGNAL_STOP = "server_stop";
 
     public static final int DEFAULT_PORT = 8081;
 
@@ -59,7 +60,9 @@ public final class FeatureModelWebsocketLauncher {
         ElkLayoutEngine.initialize(new LayeredMetaDataProvider());
         WebsocketServerLauncher launcher = new WebsocketServerLauncher(configureDiagramModule, ENDPOINT_PATH);
         out.println(SIGNAL_START);
+        // TODO improve error handling
         launcher.start(hostname, port, parser);
+        out.println(SIGNAL_STOP);
     }
 
     private static void createLogFile() throws IOException {
