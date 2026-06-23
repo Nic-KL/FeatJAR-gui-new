@@ -21,6 +21,10 @@
 package de.featjar.gui.launch;
 
 import de.featjar.gui.policy.FeatureModelDiagramModule;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import org.eclipse.elk.alg.layered.options.LayeredMetaDataProvider;
 import org.eclipse.glsp.layout.ElkLayoutEngine;
 import org.eclipse.glsp.server.di.ServerModule;
@@ -34,7 +38,13 @@ public final class FeatureModelWebsocketLauncher {
     private static final String PROCESS_NAME = "FeatureModelGlspServer";
     private static final String ENDPOINT_PATH = "/featuremodel";
 
+    private static final int MAX_LOG_FILE_SIZE = 1024 * 50; // 50 KiB
+    private static final Path LOG_FILE_PATH = Path.of("server_logs.log");
+
     protected void main(String[] args) throws Exception {
+        createLogFile();
+        System.setOut(new PrintStream(LOG_FILE_PATH.toFile()));
+
         DefaultCLIParser parser = new DefaultCLIParser(args, PROCESS_NAME);
 
         String hostname = parser.parseHostname();
@@ -45,5 +55,16 @@ public final class FeatureModelWebsocketLauncher {
 
         ElkLayoutEngine.initialize(new LayeredMetaDataProvider());
         new WebsocketServerLauncher(configureDiagramModule, ENDPOINT_PATH).start(hostname, port, parser);
+    }
+
+    private static void createLogFile() throws IOException {
+        if (Files.exists(LOG_FILE_PATH)) {
+            if (Files.size(LOG_FILE_PATH) > MAX_LOG_FILE_SIZE) {
+                Files.delete(LOG_FILE_PATH);
+                Files.createFile(LOG_FILE_PATH);
+            }
+        } else {
+            Files.createFile(LOG_FILE_PATH);
+        }
     }
 }

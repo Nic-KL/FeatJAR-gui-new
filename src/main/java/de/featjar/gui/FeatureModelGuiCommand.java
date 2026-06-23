@@ -35,14 +35,11 @@ import de.featjar.feature.model.IFeatureModel;
 import de.featjar.feature.model.io.FeatureModelFormats;
 import de.featjar.feature.model.io.xml.XMLFeatureModelFormat;
 import de.featjar.gui.io.EMFFeatureModelFormat;
-import de.featjar.gui.launch.FeatureModelWebsocketLauncher;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * Starts a GUI for modifying a feature model.
@@ -61,15 +58,10 @@ public class FeatureModelGuiCommand extends ACommand {
     public static final Option<Integer> PORT_OPTION = Options.newOption("port", Options.IntegerParser, "8081")
             .setDescription("Port of the local graphical language server.");
 
-    private static final int MAX_LOG_FILE_SIZE = 1024 * 50; // 50 KiB
-    private static final String LOG_FILE_NAME = "server_logs.log";
-    private static final String CLIENT_EMF_FILE_NAME = "My Model.featuremodel";
-    private static final Path LOG_FILE_PATH = Path.of("logs").resolve(LOG_FILE_NAME);
-    private static final Path CLASSPATH_FILE_PATH = Path.of("build").resolve("classpath");
     private static final Path CLIENT_PATH =
             Path.of("..").resolve("FeatJAR-gui-client").resolve("app");
     private static final Path CLIENT_HTML_PATH = CLIENT_PATH.resolve("diagram.html");
-    private static final Path CLIENT_ABSOLUTE_EMF_FILE_PATH = CLIENT_PATH.resolve(CLIENT_EMF_FILE_NAME);
+    private static final Path CLIENT_ABSOLUTE_EMF_FILE_PATH = CLIENT_PATH.resolve("gui_model.featuremodel");
 
     @Override
     public Optional<String> getDescription() {
@@ -135,43 +127,19 @@ public class FeatureModelGuiCommand extends ACommand {
         }
     }
 
-    private static void createLogFile() throws IOException {
-        if (Files.exists(LOG_FILE_PATH)) {
-            if (Files.size(LOG_FILE_PATH) > MAX_LOG_FILE_SIZE) {
-                Files.delete(LOG_FILE_PATH);
-                Files.createFile(LOG_FILE_PATH);
-            }
-        } else {
-            Files.createFile(LOG_FILE_PATH);
-        }
-    }
-
     private static Process launchServer(OptionList optionList) throws IOException {
-        final String classpath = Files.lines(CLASSPATH_FILE_PATH).collect(Collectors.joining(getDelimiter()));
-
-        List<String> command = new ArrayList<>(6);
-        command.add("java");
-        command.add("-cp");
-        command.add(classpath);
-        command.add(FeatureModelWebsocketLauncher.class.getCanonicalName());
-        command.add("-p");
-        command.add(String.valueOf(optionList.get(PORT_OPTION)));
+        List<String> command = new ArrayList<>(4);
+        command.add("./gradlew");
+        command.add("runServer");
+        command.add("-q");
+        command.add("--args=\"-p " + String.valueOf(optionList.get(PORT_OPTION)) + "\"");
 
         ProcessBuilder pb = new ProcessBuilder(command);
 
-        createLogFile();
-
-        pb.redirectOutput(ProcessBuilder.Redirect.appendTo(LOG_FILE_PATH.toFile()));
+        pb.redirectOutput(ProcessBuilder.Redirect.DISCARD);
         pb.redirectError(ProcessBuilder.Redirect.INHERIT);
 
         return pb.start();
     }
 
-    private static CharSequence getDelimiter() {
-        return switch (HostEnvironment.OPERATING_SYSTEM) {
-            case OperatingSystem.LINUX, OperatingSystem.MAC_OS, OperatingSystem.UNKNOWN -> ":";
-            case OperatingSystem.WINDOWS -> ";";
-            default -> throw new IllegalArgumentException("Unexpected value: " + HostEnvironment.OPERATING_SYSTEM);
-        };
-    }
 }
