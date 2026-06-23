@@ -20,25 +20,30 @@
  */
 package de.featjar.gui.launch;
 
+import de.featjar.gui.policy.FeatureModelDiagramModule;
+import org.eclipse.elk.alg.layered.options.LayeredMetaDataProvider;
+import org.eclipse.glsp.layout.ElkLayoutEngine;
 import org.eclipse.glsp.server.di.ServerModule;
-import org.eclipse.glsp.server.launch.GLSPServerLauncher;
+import org.eclipse.glsp.server.launch.DefaultCLIParser;
 import org.eclipse.glsp.server.websocket.WebsocketServerLauncher;
 
-public final class FeatureModelWebsocketLauncher extends AFeatureModelServerLauncher {
+public final class FeatureModelWebsocketLauncher {
 
-    private FeatureModelWebsocketLauncher() {}
+    private static final int DEFAULT_PORT = 8081;
 
-    public static void main(String[] args) throws Exception {
-        new FeatureModelWebsocketLauncher().start(args);
-    }
+    private static final String PROCESS_NAME = "FeatureModelGlspServer";
+    private static final String ENDPOINT_PATH = "/featuremodel";
 
-    @Override
-    protected String getProcessName() {
-        return "FeatureModelGlspServer";
-    }
+    protected void main(String[] args) throws Exception {
+        DefaultCLIParser parser = new DefaultCLIParser(args, PROCESS_NAME);
 
-    @Override
-    protected GLSPServerLauncher createLauncher(ServerModule serverModule) {
-        return new WebsocketServerLauncher(serverModule, "/featuremodel");
+        String hostname = parser.parseHostname();
+        int parsedPort = parser.parsePort();
+        int port = parsedPort == 0 ? DEFAULT_PORT : parsedPort;
+        ServerModule configureDiagramModule =
+                new ServerModule().configureDiagramModule(new FeatureModelDiagramModule());
+
+        ElkLayoutEngine.initialize(new LayeredMetaDataProvider());
+        new WebsocketServerLauncher(configureDiagramModule, ENDPOINT_PATH).start(hostname, port, parser);
     }
 }

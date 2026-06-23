@@ -25,6 +25,14 @@ dependencies {
     }
 }
 
+task writeClasspath {
+    dependsOn('assemble')
+    doLast {
+        new File(buildDir, "classpath").text = sourceSets.main.runtimeClasspath.collect { it }.join("\n")
+    }
+}
+assemble.finalizedBy(writeClasspath)
+
 sourceSets {
     main {
         java {

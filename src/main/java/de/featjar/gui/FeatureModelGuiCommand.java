@@ -42,6 +42,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Starts a GUI for modifying a feature model.
@@ -60,34 +61,11 @@ public class FeatureModelGuiCommand extends ACommand {
     public static final Option<Integer> PORT_OPTION = Options.newOption("port", Options.IntegerParser, "8081")
             .setDescription("Port of the local graphical language server.");
 
-    public static final Option<Boolean> SERVER_LAUNCHER_OPTION =
-            Options.newFlag("server").setDescription("Use websocket launcher.");
-
-    public static final Option<String> JETTY_LOG_LEVEL_OPTION =
-            Options.newOption("jetty", Options.StringParser, "INFO").setDescription("Set the log level for the Jetty.");
-
-    //    public static Options getDefaultOptions() {
-    //        Options options = new Options();
-    //        options.addOption("h", OPTION_HELP, false, "Display usage information about GLSPServerLauncher");
-    //        options.addOption("n", OPTION_HOST_NAME, true, String.format("Set server host name. [default='%s']",
-    //           DefaultOptions.HOST_NAME));
-    //        options.addOption("p", OPTION_PORT, true,
-    //           String.format("Set server port. [default='%s']", DefaultOptions.SERVER_PORT));
-    //        options.addOption("c", OPTION_CONSOLE_LOG, true,
-    //           String.format("Enable/Disable console logging. [default='%s']", DefaultOptions.CONSOLE_LOG_ENABLED));
-    //        options.addOption("f", OPTION_FILE_LOG, true,
-    //           String.format("Enable/Disable file logging. [default='%s']", DefaultOptions.FILE_LOG_ENABLED));
-    //        options.addOption("d", OPTION_LOG_DIR, true,
-    //           String.format("Set the directory for log files (File logging has to be enabled)",
-    //              DefaultOptions.LOG_DIR));
-    //        options.addOption("l", OPTION_LOG_LEVEL, true,
-    //           String.format("Set the log level. [default='%s']", DefaultOptions.LOG_LEVEL));
-    //        return options;
-
     private static final int MAX_LOG_FILE_SIZE = 1024 * 50; // 50 KiB
     private static final String LOG_FILE_NAME = "server_logs.log";
     private static final String CLIENT_EMF_FILE_NAME = "My Model.featuremodel";
     private static final Path LOG_FILE_PATH = Path.of("logs").resolve(LOG_FILE_NAME);
+    private static final Path CLASSPATH_FILE_PATH = Path.of("build").resolve("classpath");
     private static final Path CLIENT_PATH =
             Path.of("..").resolve("FeatJAR-gui-client").resolve("app");
     private static final Path CLIENT_HTML_PATH = CLIENT_PATH.resolve("diagram.html");
@@ -114,7 +92,7 @@ public class FeatureModelGuiCommand extends ACommand {
         Process server;
         try {
             IO.save(fromInput.get(), CLIENT_ABSOLUTE_EMF_FILE_PATH, new EMFFeatureModelFormat());
-            server = launchServer(FeatureModelWebsocketLauncher.class.getCanonicalName(), true, optionList);
+            server = launchServer(optionList);
             FeatJAR.log().info("Server is runnig");
             openBrowser();
         } catch (IOException e) {
@@ -168,26 +146,32 @@ public class FeatureModelGuiCommand extends ACommand {
         }
     }
 
-    private static Process launchServer(String className, boolean log, OptionList optionList) throws IOException {
-        String classpath = System.getProperty("java.class.path");
+    private static Process launchServer(OptionList optionList) throws IOException {
+        final String classpath = Files.lines(CLASSPATH_FILE_PATH).collect(Collectors.joining(getDelimiter()));
 
-        List<String> command = new ArrayList<>(5);
+        List<String> command = new ArrayList<>(6);
         command.add("java");
         command.add("-cp");
         command.add(classpath);
-        command.add(className);
+        command.add(FeatureModelWebsocketLauncher.class.getCanonicalName());
         command.add("-p");
         command.add(String.valueOf(optionList.get(PORT_OPTION)));
 
         ProcessBuilder pb = new ProcessBuilder(command);
 
-        if (log) {
-            createLogFile();
+        createLogFile();
 
-            pb.redirectOutput(ProcessBuilder.Redirect.appendTo(LOG_FILE_PATH.toFile()));
-            pb.redirectError(ProcessBuilder.Redirect.INHERIT);
-        }
+        pb.redirectOutput(ProcessBuilder.Redirect.appendTo(LOG_FILE_PATH.toFile()));
+        pb.redirectError(ProcessBuilder.Redirect.INHERIT);
 
         return pb.start();
+    }
+
+    private static CharSequence getDelimiter() {
+        return switch (HostEnvironment.OPERATING_SYSTEM) {
+            case OperatingSystem.LINUX, OperatingSystem.MAC_OS, OperatingSystem.UNKNOWN -> ":";
+            case OperatingSystem.WINDOWS -> ";";
+            default -> throw new IllegalArgumentException("Unexpected value: " + HostEnvironment.OPERATING_SYSTEM);
+        };
     }
 }
