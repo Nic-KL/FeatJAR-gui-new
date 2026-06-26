@@ -66,6 +66,7 @@ public class SelectionActionHandler implements ActionHandler {
             modelState.setProperty("currentSelection", element);
         }
 
-        return List.of();
+//        return List.of();
+        return none();
     }
 }

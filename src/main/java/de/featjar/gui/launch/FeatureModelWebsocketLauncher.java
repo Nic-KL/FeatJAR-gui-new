@@ -20,6 +20,7 @@
  */
 package de.featjar.gui.launch;
 
+import de.featjar.base.FeatJAR;
 import de.featjar.gui.policy.FeatureModelDiagramModule;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -48,6 +49,8 @@ public final class FeatureModelWebsocketLauncher {
         createLogFile();
         PrintStream out = System.out;
         System.setOut(new PrintStream(LOG_FILE_PATH.toFile()));
+        
+        if(!FeatJAR.isInitialized()) { FeatJAR.initialize(); }
 
         DefaultCLIParser parser = new DefaultCLIParser(args, PROCESS_NAME);
 

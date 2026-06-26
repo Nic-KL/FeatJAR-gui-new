@@ -20,6 +20,7 @@
  */
 package de.featjar.gui.policy;
 
+import de.featjar.gui.handler.ClientMessageHandler;
 import de.featjar.gui.handler.SelectionActionHandler;
 import de.featjar.gui.handler.create.CreateConstraintOperationHandler;
 import de.featjar.gui.handler.create.PasteOperationHandler;
@@ -86,6 +87,7 @@ public class FeatureModelDiagramModule extends EMFNotationDiagramModule {
         super.configureActionHandlers(bindings);
         bindings.add(SelectionActionHandler.class);
         bindings.add(FeatureNodeLabelEditHandler.class);
+        bindings.add(ClientMessageHandler.class);
     }
 
     @Override

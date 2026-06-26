@@ -1,0 +1,7 @@
+2026-06-23 18:53:49,648645142 [main] INFO  WebsocketServerLauncher - GLSP server is running and listening on Endpoint : http://localhost:8081/featuremodel
+[GLSP-Server]:Startup completed. Accepting requests on port:8081
+2026-06-23 18:54:14,211919543 [DefaultActionDispatcher 1] INFO  DefaultActionDispatcher - Terminating DefaultActionDispatcher thread DefaultActionDispatcher 1
+2026-06-23 18:54:14,223091114 [DefaultActionDispatcher 1] INFO  DefaultActionDispatcher - Terminating DefaultActionDispatcher
+2026-06-23 18:54:46,078410987 [Scheduler-1097897234-1] INFO  DefaultGLSPServer - Shutdown GLSP Server org.eclipse.glsp.server.protocol.DefaultGLSPServer@4fc3ffda
+2026-06-23 18:54:46,124375103 [DefaultActionDispatcher 2] INFO  DefaultActionDispatcher - Terminating DefaultActionDispatcher thread DefaultActionDispatcher 2
+2026-06-23 18:54:46,124622276 [DefaultActionDispatcher 2] INFO  DefaultActionDispatcher - Terminating DefaultActionDispatcher
