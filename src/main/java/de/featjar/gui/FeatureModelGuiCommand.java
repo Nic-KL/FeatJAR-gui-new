@@ -118,6 +118,8 @@ public class FeatureModelGuiCommand extends ACommand {
         listenForUserThread.start();
 
         waitForStopSignal();
+        
+        System.err.println("After Stop Signal");
 
         try {
             return writeResult(

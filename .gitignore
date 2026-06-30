@@ -20,7 +20,7 @@ target/
 /logs/
 
 fallback_logger.log
-
+server_logs.log
 
 *.old
 *.off

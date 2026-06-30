@@ -211,11 +211,20 @@ public class FeatureModelGModelFactory extends EMFNotationGModelFactory {
                     .id(identifiable.getId() + "_label")
                     .build());
         } else {
+        	int w = groupNodeWidth;
+        	int h = groupNodeHeight;
+        	
+        	nodeBuilder.addArgument("lowerBound", ((GroupNode) identifiable).getCardinality().getLowerBound());
+        	nodeBuilder.addArgument("upperBound", ((GroupNode) identifiable).getCardinality().getUpperBound());
+        	
+        	
             //        	nodeBuilder.size(GraphUtil.dimension(groupNodeWidth, groupNodeHeight));
-            boolean invisible =
-                    cssType.equals(NodeType.AND_NODE.value()) || cssType.equals(NodeType.CARDINALITY_NODE.value());
-            int w = invisible ? 1 : groupNodeWidth;
-            int h = invisible ? 1 : groupNodeHeight;
+//            boolean invisible =
+//                    cssType.equals(NodeType.AND_NODE.value()) || cssType.equals(NodeType.CARDINALITY_NODE.value());
+//            int w = invisible ? 1 : groupNodeWidth;
+//            int h = invisible ? 1 : groupNodeHeight;
+            
+            
             nodeBuilder.size(GraphUtil.dimension(w, h));
         }
 
